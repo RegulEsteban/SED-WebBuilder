@@ -9,13 +9,13 @@
   var Gallery       = require('./module/Gallery');
   var Util          = require('./module/Util').Util;
 
-  var colors      = ['#ec73a8','#f29700','#faef01','#c1d500','#9dd1a3','#00a0ea','#9fc3e7','#b1569c'];
-  var sceneColors = [];
+  var colors      = ['#24af85','#b297c7','#6fba69','#ee7436','#118889','#5ba199','#bccf02','#e84040'];
+  var sceneColors = ['#24af85','#b297c7','#6fba69','#ee7436','#118889','#5ba199','#bccf02','#e84040'];
   var $loadingWrap,$alertWrap;
 
   
   $(document).ready(function(){
-    sceneColors   = Util.Array.shuffle(colors);
+    //sceneColors   =  Util.Array.shuffle(colors);
     $loadingWrap  = $('.loading-wrap');
     $alertWrap    = $('.alert-wrap');
 
@@ -51,6 +51,8 @@
     });
     LoadingAnim.init(sceneColors[0],sceneColors[0] == '#faef01'?'#000':'#fff');
     imgLoad();
+  
+	gotoScene[0];
   });
 
   function imgLoad(){
@@ -187,7 +189,6 @@
         gotoScene(0);
       }
     });
-
   }
 
 
@@ -222,14 +223,18 @@
     for(var i=0; i<colors.length; i++){
       copyColor.push(colors[i]);
     }
-
+	
+	var icons = ['mex_paz_blan.png','mex_inclu_blan.png','mex_edu_blan.png','mex_pros_blan.png','mex_global_blan.png','democra_blan.png','cerca_moder_blan.png','genero_blan.png'];
+	
     sceneTotal = $('.scene').length;
 
     $('.scene').each(function(i){
       var wrap = $(this);
       var sceneName = wrap.data('sceneName');
+	  var numicon =[];
+	  numicon.push(icons[i])
       var colorCover = $('<figure class="color-cover"></figure>').appendTo($(this));
-      var coverTitle = $('<span class="cover-title">'+sceneName+'</span>').appendTo(colorCover);
+      var coverTitle = $('<span class="cover-title"><img class="pd-image img-wrap" src="images/icons/'+numicon+'"><br><big><b>'+sceneName+'</b></big><br><small>'+"Programa Sectorial de Gobernación"+'</small></span>').appendTo(colorCover);
       TweenLite.set(colorCover,{backgroundColor:sceneColors[i],z:100});
       if(i==0)TweenLite.set(colorCover,{y:'-100%'});
       
@@ -260,7 +265,7 @@
 
     sceneMoving();
   }
-
+	
   function setEvent(){
     $(window).on('keydown', onKeydown);
   }
@@ -1057,17 +1062,17 @@ module.exports = Loader_IMG;
 
       this.line = this.logoClass.getPaths('k');
 		
-      this.characters = [
-         {value:20,draw:false,lines:this.logoClass.getPaths('k').paths[0],shape:this.logoClass.getShape('k').shapes[0]},
-         {value:30,draw:false,lines:this.logoClass.getPaths('u1').paths[0],shape:this.logoClass.getShape('u1').shapes[0]},
-         {value:40,draw:false,lines:this.logoClass.getPaths('u2').paths[0],shape:this.logoClass.getShape('u2').shapes[0]},
-         {value:50,draw:false,lines:this.logoClass.getPaths('m').paths[0],shape:this.logoClass.getShape('m').shapes[0]}
-      ]
+      // this.characters = [
+         // {value:20,draw:false,lines:this.logoClass.getPaths('k').paths[0],shape:this.logoClass.getShape('k').shapes[0]},
+         // {value:30,draw:false,lines:this.logoClass.getPaths('u1').paths[0],shape:this.logoClass.getShape('u1').shapes[0]},
+         // {value:40,draw:false,lines:this.logoClass.getPaths('u2').paths[0],shape:this.logoClass.getShape('u2').shapes[0]},
+         // {value:50,draw:false,lines:this.logoClass.getPaths('m').paths[0],shape:this.logoClass.getShape('m').shapes[0]}
+      // ]
 
-      for(var i=0; i<this.characters.length; i++){
-        var c = this.characters[i];
-        TweenLite.set(c.shape,{opacity:0});
-      }
+      // for(var i=0; i<this.characters.length; i++){
+        // var c = this.characters[i];
+        // TweenLite.set(c.shape,{opacity:0});
+      // }
 
       // this.paths = this.line.paths;
       // this.pathRatio = 100/this.paths.length;
