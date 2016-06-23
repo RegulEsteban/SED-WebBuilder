@@ -35,16 +35,22 @@ div {
 }
 
 .viewWork {
-    padding: 1.0em 1.5em;
-    text-decoration: none;
-    color: #000;
-    border: .2em solid #000;
+    float: right;
+    z-index: 10;  
+    position: absolute;  
+    right: 0;  
+    top: 0;
+    max-width: 200px;
+    
+    padding: .5em .5em;
+    color: #462B60;
+    border: .2em solid #462B60;
     font-family: 'Soberana_Sans';
     font-weight: 200;
     font-size: .8em;
     letter-spacing: .1em;
     border-radius: .7em;
-    margin-left: 1.5em
+    margin: 1.5em
 }
 
 .viewWork:hover {
@@ -306,61 +312,6 @@ div {
     clear: both
 }
 
-@media only screen and (min-width: 1600px) {
-    #page-change-box-left-1,
-    #page-change-box-right-1,
-    #page-change-box-left-2,
-    #page-change-box-right-2,
-    #page-change-box-left-3,
-    #page-change-box-right-3,
-    #page-change-box-left-4,
-    #page-change-box-right-4,
-    #page-change-box-left-5,
-    #page-change-box-right-5 {
-        width: 30%;
-        display: inline-block;
-        white-space: nowrap;
-        margin: 20px 0
-    }
-}
-
-@media only screen and (min-width: 1201px) {
-    .mobile-description,
-    .mobile-description-2 {
-        display: inline-block;
-        padding: 5% 20%
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .workDiv {
-        padding-top: 15%
-    }
-    .contactDiv,
-    .aboutDiv {
-        width: 70%;
-        padding-top: 15%
-    }
-    .mobile-description {
-        background-color: #ECECEC
-    }
-    .mobile-description,
-    .mobile-description-2 {
-        padding: 13% 20%
-    }
-    .problem-approach {
-        padding-top: 3%
-    }
-    .the-problem-div,
-    .the-approach-div {
-        float: none;
-        width: 100%
-    }
-    .the-approach-div {
-        padding-top: 8%
-    }
-}
-
 @media only screen and (max-width: 1024px) {
     .cd-top {
         display: none
@@ -378,7 +329,16 @@ div {
     .secondInnerIcon {
         display: none
     }
-    .caption {
+    .right-half .caption {
+        font-size: 0.6em;
+
+        width: 100%;
+        -webkit-transform: none;
+        transform: none
+    }
+    .left-half .caption {
+        font-size: 0.6em;
+
         width: 100%;
         -webkit-transform: none;
         transform: none
@@ -402,182 +362,11 @@ div {
     #generoIcon .item:hover .workSquare	{
         border-color: #fff
     }
-    .contactDiv,
-    .aboutDiv {
-        width: 90%;
-        padding-top: 15%
-    }
-    .mobile-description {
-        background-color: #ECECEC
-    }
-    .mobile-text-div,
-    .mobile-text-div-2 {
-        float: none;
-        width: 100%
-    }
-    .mobile-div,
-    .mobile-div-2 {
-        margin: 10% auto 0% auto;
-        float: none;
-        width: 35%
-    }
-    .mobile-description,
-    .mobile-description-2 {
-        padding: 13% 10%
-    }
-    .berakael-logo,
-    .encore-logo,
-    .socarp-logo,
-    .buz-logo {
-        width: 10%;
-        max-width: none
-    }
-    .socarp-header-image {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/socarp-header-small-img.jpg) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/socarp-header-small-img.jpg) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #CC4435
-    }
-    .encore-header-image {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(imgs-2/encore-header-small-img.jpg) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(imgs-2/encore-header-small-img.jpg) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #000
-    }
-    .berakael-header-image {
-        content: '';
-        width: 100%;
-        height: 80vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(imgs-2/berakael-header-small-img.png) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(imgs-2/berakael-header-small-img.png) no-repeat center center;
-        background-size: cover;
-        will-change: transform;
-        background-color: #ececec
-    }
-    .be-wireframe {
-        display: none
-    }
-    .bera-new-logo-concept-img {
-        width: 90%;
-        margin: 5% 5% 0 5%
-    }
-    .socarp-system-design {
-        display: none
-    }
-    .stockholder-text-div {
-        width: 100%;
-        float: none;
-        max-width: none;
-        min-width: none
-    }
-    .stockholder-image {
-        width: 100%;
-        float: none;
-        padding-top: 60px
-    }
-    .socarp-sketch-ideas-div {
-        display: block;
-        max-width: none;
-        width: 100%;
-        margin: 10% 0 0 0;
-        padding: 0 10%;
-        top: 0;
-        right: 0
-    }
-    .sketch-ideas-img {
-        margin-top: 45%
-    }
-    .socarp-background-3 {
-        content: '';
-        width: 100%;
-        height: 90vh;
-        top: 0;
-        left: 0;
-        background: url(imgs-2/socarp-background-img-2x-2.png) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #333333
-    }
-    .full-admin-imgs {
-        width: 80%;
-        margin: 0 10%
-    }
-    .admin-caption>p {
-        padding: 0 10%;
-        font-size: 80%
-    }
-    .socarp-developer-hire {
-        display: none
-    }
-    .idea-sketch,
-    .encore-wireframe {
-        display: block;
-        max-width: none;
-        width: 100%;
-        margin: 10% 0 0 0;
-        padding: 0 10%;
-        top: 0;
-        right: 0
-    }
-    .encore-new-background-1 {
-        margin-top: 20%
-    }
-    .encore-new-background-2 {
-        margin-top: 25%
-    }
-    .title-and-brand,
-    .title-and-brand-2 {
-        display: none
-    }
-    .individual-page-icon-3,
-    .individual-page-icon-2 {
-        display: none
-    }
-    .vertical-line {
-        display: none
-    }
-    .closeSocarp,
-    .closeBerakael,
-    .closeArchive,
-    .closeBuz,
-    .closeEncore,
-    .closeThesis {
-        display: none
-    }
-    .closeBerakael2,
-    .closeSocarp2,
-    .closeEncore2,
-    .closeBuz2,
-    .closeThesis2 {
-        display: block
-    }
+    
 }
 
-@media only screen and (max-width: 1000px) {
-    .phone-detail .showcase {
-        width: 86%
-    }
-    .phone-detail .showcase .iphone {
-        float: none;
-        margin: 0 auto 40px auto !important
-    }
-}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
     .homePage {
         padding-top: 15%;
         width: 100%
@@ -610,321 +399,7 @@ div {
         width: 30%
     }
     .item {
-        margin: 9% 10% 2% 10%
-    }
-    .work-image-and-heading {
-        width: 100%
-    }
-    .berakael-logo,
-    .encore-logo,
-    .socarp-logo,
-    .buz-logo {
-        width: 10%;
-        max-width: none;
-        padding-top: 50px
-    }
-    .work-branding {
-        font-size: 120%
-    }
-    .work-group {
-        font-size: 190%
-    }
-    .work-overview {
-        padding: 10% 10%
-    }
-    .overview {
-        font-size: 140%
-    }
-    .problem-approach {
-        padding: 10% 10% 15% 10%
-    }
-    .the-problem-div {
-        float: none;
-        width: 100%
-    }
-    .the-approach-div {
-        margin-top: 15%;
-        float: none;
-        width: 100%
-    }
-    h6 {
-        text-align: center;
-        font-size: 150%;
-        padding-bottom: 6%
-    }
-    .be-style-guide-img {
-        height: 70vh
-    }
-    .full-berakael-image,
-    .full-encore-image {
-        width: 80%;
-        margin: 0 10%
-    }
-    .visual-design,
-    .mockup-design {
-        padding: 15% 10% 0% 10%
-    }
-    .visual-design-text,
-    .mockup-design-text {
-        padding: 5% 10%
-    }
-    .reflections-div {
-        padding: 15% 10%
-    }
-    .reflections-heading {
-        font-size: 140%
-    }
-    .idea-description {
-        margin-bottom: 20%;
-        padding: 13% 10% 0% 10%
-    }
-    .idea-text-div,
-    .concept-image-div {
-        float: none;
-        width: 100%
-    }
-    .socarp-header-image {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/socarp-iphone-header-img.jpg) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/socarp-iphone-header-img.jpg) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #CC4435
-    }
-    .encore-header-image {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/encore-iphone-header-img.jpg) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imgs-2/encore-iphone-header-img.jpg) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #000
-    }
-    .buz-header-image {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imgs-2/buz-new-small-header-image.png) no-repeat center center;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imgs-2/buz-new-small-header-image.png) no-repeat center center;
-        background-size: contain;
-        background-color: #FF5751;
-        will-change: transform;
-        position: relative
-    }
-    .work-branding {
-        font-size: 130%
-    }
-    .work-overview {
-        padding: 10% 10%
-    }
-    .socarp-logo {
-        padding-top: 10px;
-        margin-top: 4%;
-        width: 60px
-    }
-    .socarp-work-branding {
-        font-size: 150%
-    }
-    .socarp-work-group,
-    .work-group {
-        font-size: 200%;
-        font-weight: 400
-    }
-    .socarp-stockholder-div {
-        position: relative
-    }
-    .stockholder-text-div {
-        width: 100%;
-        float: none;
-        max-width: none;
-        min-width: none
-    }
-    .stockholder-image {
-        width: 100%;
-        float: none;
-        padding-top: 60px
-    }
-    .socarp-sketch-ideas-div {
-        display: block;
-        max-width: none;
-        width: 100%;
-        top: 0;
-        right: 0;
-        padding: 0 0 15% 0
-    }
-    .sketch-ideas-img {
-        margin-top: 55%
-    }
-    .card-concept-img {
-        width: 80%;
-        margin: 0 10%;
-        float: none
-    }
-    .socarp-card-interface-div {
-        display: block;
-        max-width: none;
-        min-width: none;
-        width: 80%;
-        margin: 10% 10%;
-        padding: 0 10%;
-        top: 0;
-        left: 0;
-        right: 0
-    }
-    .socarp-interaction-gifs-div {
-        width: 100%;
-        max-width: 1100px;
-        background-color: #fff;
-        margin: 0 auto
-    }
-    .interaction-marvel-text-div,
-    .interaction-gif-text-div {
-        width: 80%;
-        max-width: none;
-        min-width: none;
-        float: none;
-        margin: 10% 10% 0 10%;
-        padding: 0 5%
-    }
-    iframe {
-        width: 100%;
-        margin: 10% 0 0 0
-    }
-    .gif-interaction-img {
-        width: 80%;
-        float: none;
-        max-width: none;
-        margin: 5% 10% 0 10%
-    }
-    .full-admin-imgs {
-        width: 90%;
-        margin: 0 5%
-    }
-    .admin-caption>p {
-        padding: 0 10%;
-        font-size: 80%
-    }
-    .socarp-developer-hire {
-        display: none
-    }
-    .encore-new-background-2 {
-        margin-top: 35%
-    }
-    .encore-new-background-3 {
-        margin-top: 15%
-    }
-    .idea-visual-sketch {
-        display: block;
-        max-width: none;
-        min-width: none;
-        width: 100%;
-        margin: 18% 0 0 0;
-        padding: 0 10%;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0
-    }
-    .bera-new-logo-concept-img {
-        width: 95%;
-        margin: 35% 2.5% 0 2.5%
-    }
-    .phone-detail .showcase {
-        width: 90%
-    }
-    .next-link {
-        margin-left: 5%
-    }
-    .title-and-brand-2 {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-        -webkit-transition: none;
-        transition: none;
-        margin-right: 15%
-    }
-    #page-change-box-left-1,
-    #page-change-box-left-2,
-    #page-change-box-left-3,
-    #page-change-box-left-4,
-    #page-change-box-left-5 {
-        display: none
-    }
-    .title-and-brand-2 {
-        display: block
-    }
-    #page-change-box-right-1,
-    #page-change-box-right-2,
-    #page-change-box-right-3,
-    #page-change-box-right-4,
-    #page-change-box-right-5 {
-        width: 100%
-    }
-    #page-change-box-left-1:hover .title-and-brand,
-    #page-change-box-right-1:hover .title-and-brand-2,
-    #page-change-box-left-1:hover .individual-page-icon-2,
-    #page-change-box-right-1:hover .individual-page-icon-3,
-    #page-change-box-left-2:hover .title-and-brand,
-    #page-change-box-right-2:hover .title-and-brand-2,
-    #page-change-box-left-2:hover .individual-page-icon-2,
-    #page-change-box-right-2:hover .individual-page-icon-3,
-    #page-change-box-left-3:hover .title-and-brand,
-    #page-change-box-right-3:hover .title-and-brand-2,
-    #page-change-box-left-3:hover .individual-page-icon-2,
-    #page-change-box-right-3:hover .individual-page-icon-3,
-    #page-change-box-left-4:hover .title-and-brand,
-    #page-change-box-right-4:hover .title-and-brand-2,
-    #page-change-box-left-4:hover .individual-page-icon-2,
-    #page-change-box-right-4:hover .individual-page-icon-3,
-    #page-change-box-left-5:hover .title-and-brand,
-    #page-change-box-right-5:hover .title-and-brand-2,
-    #page-change-box-left-5:hover .individual-page-icon-2,
-    #page-change-box-right-5:hover .individual-page-icon-3 {
-        -webkit-transform: none;
-        transform: none
-    }
-    .grid-sizer,
-    .grid-item {
-        width: 50%
-    }
-    .archiveHeadingAndText {
-        padding: 6% 0
-    }
-    .aboutContainer {
-        height: 500px;
-        width: 100%
-    }
-    .biodun-image-div {
-        width: 80%;
-        margin: 0 auto;
-        float: none
-    }
-    .biodun_image {
-        width: 90%
-    }
-    .aboutContainer .aboutDescriptionText {
-        width: 80%;
-        margin-top: 5%;
-        left: 10%
-    }
-    .lowerSection {
-        margin-top: 100px
-    }
-    .lowerIcons {
-        float: none
-    }
-    .lowerSection .resumeAndTalk {
-        padding-top: 60px;
-        float: none
+        margin: 9% 5% 2% 5%
     }
 }
 
@@ -934,48 +409,25 @@ div {
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 620px) {
     .errorPage {
         margin-top: 55%
     }
-    .cd-top {
-        display: none
+    .viewWork {
+        margin-top: 55px;
+        margin-right: 25%;
     }
-    .homePage {
-        padding-top: 25%;
-        width: 100%
+
+    .right-half div.item {
+        text-align: center;
+        width: 20%
     }
-    .homeTextDiv {
-        padding: 1% 0% 10% 0%
+
+    .left-half div.item {
+        text-align: center;
+        width: 20%
     }
-    .homeText {
-        font-size: 90%
-    }
-    .workDiv {
-        width: 100%;
-        padding-top: 25%
-    }
-    .workTextAndLinks {
-        width: 100%;
-        padding-left: 6%
-    }
-    .workTextAndLinks .linksList {
-        text-align: center
-    }
-    .work-links {
-        line-height: 2.0em
-    }
-    div.item {
-        width: 30%
-    }
-    .item {
-        margin: 9% 10% 2% 10%
-    }
-    .caption {
-        width: 100%;
-        -webkit-transform: none;
-        transform: none
-    }
+    
     .secondInnerIcon {
         display: none
     }
@@ -993,174 +445,15 @@ div {
         -webkit-transform: none;
         transform: none
     }
-    .work-image-and-heading {
-        width: 100%;
-        padding: 0 0%
+
+   .container {
+      display: inline-block;
     }
-    .work-overview {
-        padding: 10% 10%
+
+    .left-half {
+       float: none;
+        margin-right:0;
+        width:auto;
     }
-    .berakael-logo,
-    .encore-logo,
-    .buz-logo {
-        width: 15%;
-        max-width: none;
-        padding-top: 50px
-    }
-    .socarp-logo {
-        width: 15%;
-        max-width: none;
-        padding-top: 20px
-    }
-    .socarp-work-branding,
-    .work-branding,
-    .buz-work-branding {
-        font-size: 150%
-    }
-    .socarp-work-group,
-    .work-group {
-        font-size: 160%;
-        font-weight: 400
-    }
-    .stockholder-text-div {
-        width: 100%;
-        float: none;
-        max-width: none;
-        min-width: none
-    }
-    .stockholder-image {
-        width: 100%;
-        float: none
-    }
-    .socarp-sketch-ideas-div {
-        display: block;
-        max-width: none;
-        width: 100%;
-        margin: 10% 0 0 0;
-        top: 0;
-        right: 0
-    }
-    .sketch-ideas-img {
-        width: 100%;
-        margin-top: 90%
-    }
-    .socarp-background-3 {
-        content: '';
-        width: 100%;
-        height: 60vh;
-        top: 0;
-        left: 0;
-        background: url(imgs-2/socarp-background-img-2x-2.png) no-repeat center center;
-        background-size: contain;
-        will-change: transform;
-        background-color: #333333
-    }
-    .socarp-card-interface-div {
-        display: block;
-        max-width: none;
-        min-width: none;
-        width: 80%;
-        margin: 10% 10%;
-        top: 0;
-        left: 0;
-        right: 0
-    }
-    .card-concept-img {
-        width: 80%;
-        margin: 0 10%;
-        float: none;
-        margin-top: 90%
-    }
-    .overview,
-    .socarp-overview {
-        font-size: 140%;
-        padding: 0 0%
-    }
-    .idea-description {
-        margin-bottom: 20%;
-        padding: 13% 10% 0% 10%
-    }
-    .idea-text-div,
-    .concept-image-div {
-        float: none;
-        width: 100%
-    }
-    h6 {
-        text-align: center;
-        font-size: 150%;
-        padding-bottom: 6%
-    }
-    .be-style-guide-img {
-        height: 50vh
-    }
-    .be-logo-text-div {
-        left: 15%
-    }
-    .encore-new-background-1 {
-        width: 95%;
-        margin: 60% 2.5% 0 2.5%
-    }
-    .encore-new-background-2 {
-        width: 99%;
-        margin: 90% 2.5% 0 2.5%
-    }
-    .encore-new-background-3 {
-        width: 100%;
-        margin: 55% 0 0 0
-    }
-    .bera-new-logo-concept-img {
-        width: 95%;
-        margin: 65% 2.5% 0 2.5%
-    }
-    .spline {
-        padding: 40px 0
-    }
-    .phone-detail .showcase .iphone {
-        padding: 0;
-        width: 100%
-    }
-    .phone-detail .showcase .iphone img {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 0 auto 30px auto;
-        display: block;
-        max-width: 100%
-    }
-    .phone-detail .showcase .iphone::before {
-        display: none
-    }
-    .buz-style-guide-div {
-        height: 60vh
-    }
-    .archiveHeadingAndText {
-        padding: 20% 0 10% 0
-    }
-    .aboutContainer {
-        height: 500px;
-        width: 100%
-    }
-    .biodun-image-div {
-        width: 80%;
-        margin: 0 auto;
-        float: none
-    }
-    .biodun_image {
-        width: 90%
-    }
-    .aboutContainer .aboutDescriptionText {
-        width: 80%;
-        margin-top: 5%;
-        left: 10%
-    }
-    .lowerSection {
-        margin-top: 400px
-    }
-    .lowerIcons {
-        float: none
-    }
-    .lowerSection .resumeAndTalk {
-        padding-top: 60px;
-        float: none
-    }
+
 }

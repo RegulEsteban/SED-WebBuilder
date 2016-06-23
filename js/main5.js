@@ -252,75 +252,7 @@ function updateProject(num, client) {
 	}	
 }
 
-$(window).on('resize', function(){
-      var win = $(this); //this = window
-	  
-	 
-	 
-		
-		
-		
-	  if (win.width() <= 800) {
-			$burger.css("display","block");
-			$(".project").hide();
-			//$(".project").css("display","hidden");
-			
-		}else {
-			$burger.css("display","none");
-		}
-      if (win.width() >= 800) {
-		   $navLine.css('top',54);
-		   
-		   
-		   
-		   $viewProjectWrapper.removeClass("dockHome");
-		   $viewText.removeClass("dockHome");
-		   projectOpen=0;
-		    $left.css({cursor:"pointer"});
-		   
-		   $(".whiteDot").css({ opacity: 0 });
-		   $(".navNum").css({ 'color': '#999' });
-		   
-		   $(".whiteDot1").css({ opacity: 1 });
-		   $(".navNum1").css({ 'color': '#161921' });
-		   
-		   activeProjectNumber=1;
-	 	 	$(".projectNumber").replaceWith('<h1 class="projectNumber">01'+"</h1>");
-	 		client = $(".startProj").data('client');
-	  		$(".client").replaceWith('<h2 class="client">'+client+"</h2>");
-			
-		  	$("body").removeClass("menuOpen");
-			$right.removeClass("rightOut");
-			$left.removeClass("rightOut");
-			$(".project").removeClass("rightOut");
-			$(".projMenu0").removeClass("nav0");
-			$(".projMenu1").removeClass("nav1");
-			$(".projMenu2").removeClass("nav2");
-			$(".projMenu3").removeClass("nav3");
-			$(".projMenu4").removeClass("nav4");
-			$(".projMenu5").removeClass("nav5");
-			$(".projMenu6").removeClass("nav6");
-			$burger.removeClass("open");
-			$(".menuOverlay").removeClass("menuOut");
-			$(".topNav").removeClass("fadeNav");
-			$right.css("display" ,"block");
-			$left.removeClass("expand");
-			$right.removeClass("expand");
-			$navContainer.removeClass("expand");
-			$("body").css("overflow-y", 'hidden');
-			$("body").css("overflow-x", 'hidden');
-			$("#copy").removeClass("expand");
-			animateAboutTextIn();
-			activeProjectNumber=1;
-			
-			updateInfo()
-			swapImage()
-		
-		  /* ... */ }
-		  
 
-     
-});
 
 
 
@@ -737,10 +669,10 @@ function CreateElement() {
 CreateElement();
 
 var companyName = [
-"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a>",
-"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a>",
-"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a>",
-"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a>",
+"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a><a href='#0' id='globalIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>",
+"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a><a href='#0' id='globalIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>",
+"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a><a href='#0' id='globalIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>",
+"<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a><a href='#0' id='globalIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>",
 "<a href='#0' id='pazIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a><a href='#0' id='incluyenteIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a><a href='#0' id='educacionIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a><a href='#0' id='prosperoIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a><a href='#0' id='globalIcon'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>"
 ]
 var companyBuildUp="";
@@ -776,7 +708,7 @@ function update() {
 						
 						setTimeout(delayCollapseLoader, 400);
 					}
-				}, 350 * p);
+				}, 650 * p);
 			})(i);
 		}
 		Model.isLoaded = true;
@@ -801,7 +733,7 @@ function delayCollapseLoader(){
 		$topNav.css("visibility", "visible");
 		$mainContainer.css("visibility","visible");
 		$siteLoader.addClass("animateOff");
-		$siteLoader.css({"transform": "translate3d(" + 200 + "%, 0px, 0px)"});
+		$siteLoader.fadeOut( "slow", function() {});
 		$left.css("display","table-cell"); 
 		$rightBorder.css("display","block");
 		// Set initial glitch image in next render.
@@ -810,28 +742,5 @@ function delayCollapseLoader(){
 		animateAboutTextIn();
 		
 		}
-
-/***************************************************/
-
-
- $(window).scroll(function(){	
-	if(  document.documentElement.scrollTop || document.body.scrollTop >100) {
-		glitch.disable();
-		$viewText.css("color", "#000");	
-		$viewProject.css("background-color", "#000");
-		$viewProject2.css("background-color", "#000");
-		$projectImage.addClass('scrolled');
-	}else {
-		glitch.enable();
-		$viewText.css("color", "#fff");
-		$viewProject.css("background-color", "#fff");
-		$viewProject2.css("background-color", "#fff");
-		 $projectImage.removeClass('scrolled');
-	}
-});
-
-
-
-
 
 });
