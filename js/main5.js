@@ -19,6 +19,7 @@ $(document).ready(function () {
 	$wrapper = $('.wrapper');
 	$navContainer= $('.navContainer');
 	$mainContainer= $('#mainContainer');
+	$wrap= $('#wrap');
 	$copy = $('#copy'); 
 	$nextProjectWrapper= $('.nextProjectWrapper');
 	$whiteDot= $('.whiteDot');
@@ -742,5 +743,12 @@ function delayCollapseLoader(){
 		animateAboutTextIn();
 		
 		}
+		
+		
+	$("#pazIcon").click(function() {
+		$mainContainer.css("visibility","hidden");
+		$wrap.css("visibility","visible");
+	//setScene(1);
+	});
 
 });

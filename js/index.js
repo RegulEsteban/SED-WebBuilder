@@ -18,7 +18,7 @@
     //sceneColors   =  Util.Array.shuffle(colors);
     $loadingWrap  = $('.loading-wrap');
     $alertWrap    = $('.alert-wrap');
-
+	
     $alertWrap.find('.alert-close').on('click',function(){
       $alertWrap.removeClass('alertOn');
     });
@@ -49,10 +49,9 @@
       var urls = url.split('.');
       $(this).attr('src',urls[0]+'-grey.'+urls[1]);
     });
+	
     LoadingAnim.init(sceneColors[0],sceneColors[0] == '#faef01'?'#000':'#fff');
     imgLoad();
-  
-	gotoScene[0];
   });
 
   function imgLoad(){
@@ -437,7 +436,7 @@
         }})
       });
     });
-
+	
     $navi.on('mouseout',function(){
       activeNavi(crtScene);
       outTimer = setTimeout(function(){
@@ -455,7 +454,7 @@
     });
 
   }
-
+	
   function gotoScene(id){
     flags.jump = true;
     sceneM.gotoScene(id,{duration:1.5,onComplete:function(){ flags.jump = false; }});
