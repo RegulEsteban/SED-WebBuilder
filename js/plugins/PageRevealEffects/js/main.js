@@ -125,7 +125,7 @@
 		var  strHTML = '';
 		for(var i = 0; i < this.options.nmbLayers; ++i) {
 			var bgcolor = typeof this.options.bgcolor === 'string' ? this.options.bgcolor : (this.options.bgcolor instanceof Array && this.options.bgcolor[i] ? this.options.bgcolor[i] : '#fff');
-			strHTML += '<div style="background:' + bgcolor + '" class="revealer__layer"></div>';
+			strHTML += '<div ide="'+ i +'" style="background:' + bgcolor + '" class="revealer__layer"><img src="'+this.options.bgImages[i]+'" class="img-responsive"/><div class="quote"><p>'+this.options.bgTitles[i]+'</p><h3>Programa Sectorial de Gobernación</h3></div></div>,';
 		}
 		this.revealerWrapper.innerHTML = strHTML;
 		bodyEl.appendChild(this.revealerWrapper);
@@ -135,7 +135,7 @@
 	 * reveal the layers
 	 * direction: right || left || top || bottom || cornertopleft || cornertopright || cornerbottomleft || cornerbottomright
 	 */
-	Revealer.prototype.reveal = function(direction, callbacktime, callback) {
+	Revealer.prototype.reveal = function(direction, callbacktime, callback, currentPage, prevPage) {
 		// if animating return
 		if( this.isAnimating ) {
 			return false;
@@ -145,6 +145,15 @@
 		this.direction = direction;
 		// onStart callback
 		this.options.onStart(this.direction);
+
+		$( ".revealer__layer" ).each( function( index, element ){
+    		if( element.getAttribute("ide") == currentPage){
+    			$(element).css('z-index', '2147483647');
+    		}
+    		if(element.getAttribute("ide") == prevPage){
+    			$(element).css('z-index', '0');
+    		}
+		});
 
 		// set the initial position for the layers´ parent
 		var widthVal, heightVal, transform;
@@ -187,22 +196,22 @@
 
 		// track the end of the animation for all layers
 		var self = this, layerscomplete = 0;
-		this.layers.forEach(function(layer) {
-			onEndAnimation(layer, function() {
-				++layerscomplete;
-				if( layerscomplete === self.options.nmbLayers ) {
-					classie.remove(self.revealerWrapper, 'revealer--' + direction || 'revealer--right');
-					classie.remove(self.revealerWrapper, 'revealer--animate');
-					
-					self.revealerWrapper.style.opacity = 0;
-					self.isAnimating = false;
+		var page = parseInt(currentPage);
 
-					// callback
-					self.options.onEnd(self.direction);
-				}
-			});
+		onEndAnimation(this.layers[page], function() {
+			++layerscomplete;
+			if( layerscomplete === self.options.nmbTransitions ) {
+				classie.remove(self.revealerWrapper, 'revealer--' + direction || 'revealer--right');
+				classie.remove(self.revealerWrapper, 'revealer--animate');
+					
+				self.revealerWrapper.style.opacity = 0;
+				self.isAnimating = false;
+
+				// callback
+				self.options.onEnd(self.direction);
+			}
 		});
-			
+
 		// reveal fn callback
 		if( typeof callback === 'function') {
 			if( this.callbacktimeout ) {
