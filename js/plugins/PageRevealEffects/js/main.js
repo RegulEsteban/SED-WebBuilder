@@ -149,9 +149,11 @@
 		$( ".revealer__layer" ).each( function( index, element ){
     		if( element.getAttribute("ide") == currentPage){
     			$(element).css('z-index', '2147483647');
+    			$(element).css('visibility', 'visible');
     		}
     		if(element.getAttribute("ide") == prevPage){
     			$(element).css('z-index', '0');
+    			$(element).css('visibility', 'hidden');
     		}
 		});
 
@@ -208,7 +210,7 @@
 				self.isAnimating = false;
 
 				// callback
-				self.options.onEnd(self.direction);
+				self.options.onEnd(self.direction, prevPage);
 			}
 		});
 

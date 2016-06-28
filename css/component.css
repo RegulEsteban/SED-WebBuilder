@@ -94,53 +94,6 @@
 	bottom: 0;
 }
 
-.icon {
-	width: 100%;
-	height: 100%;
-	fill: rgba(0, 0, 0, 0.15);
-	stroke: #303840;
-}
-
-.pagenav__button:hover .icon {
-	stroke: #000;
-}
-
-.icon--rtop {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-.icon--rbottom {
-	-webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-.icon--rright {
-	-webkit-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-}
-
-.icon--rtopleft {
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.icon--rtopright {
-	-webkit-transform: rotate(135deg);
-	transform: rotate(135deg);
-}
-
-.icon--rbottomleft {
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-.icon--rbottomright {
-	-webkit-transform: rotate(-135deg);
-	transform: rotate(-135deg);
-}
-
-
 /* Page content */
 
 .quote {
@@ -215,6 +168,7 @@
 	top: 0;
 	left: 0;
 	background: #ddd;
+	visibility: hidden;
 }
 
 /* Revealer effects */

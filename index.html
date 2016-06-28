@@ -55,7 +55,7 @@
 <main class="container-transition">
 	<div class="pages">
 		<div class="page page--current" ide="0"><!-- intro page -->
-			<div id="mainContainer" style="visibility:visible">
+			<div id="mainContainer" style="visibility:hidden">
 				<section class="container">
 					<div class="head-button2">
 						<a href="#" class="viewWork">Regresar a Programas</a>
@@ -215,37 +215,10 @@
 				  </div>
 				</section>
 			</div>
-			<iframe src="http://next.openspending.org/viewer/embed/treemap/d736c199bc5c0f34d32da957f625cfe3:yearend_2015?measure=Pagado.sum&order=Pagado.sum%7Cdesc&visualizations%5B%5D=Treemap&groups%5B%5D=economic_classification_2.ID_OG" width="100" height="700px" border="0" frameborder="0" seamless="on" style="border: 0px; margin: 0px; padding: 0px;top: 0;left: 0;width:100%;"></iframe>
-			<!-- <header class="codrops-header">
-				<div class="codrops-links">
-					<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/IsometricGrids/" title="Previous Demo"><span>Previous Demo</span></a>
-					<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=27125" title="Back to the article"><span>Back to the Codrops article</span></a>
-				</div>
-				<h1 class="codrops-header__title">Multi-Layer Page Transition Effects</h1>
-				<div class="codrops-header__subbox">
-					<span>Choose an effect:</span>
-					<div class="custom-select">
-						<select name="select" id="select-effect">
-							<option value="effect-3" data-layers="3" data-colors="#0092DD,#fff,#3E3A35" selected>Triple Swoosh</option> 
-							<option value="effect-1" data-layers="1" data-colors="#202023">Simple</option>
-							<option value="effect-2" data-layers="2" data-colors="#202023,#3D4A41">Duo Move</option>
-							<option value="effect-4" data-layers="3" data-colors="#202023,#555,#d1d1d1">Content Move</option>
-						</select>
-					</div>
-				</div>
-			</header>
-			<a class="pater" href="http://goo.gl/ws0zHr">
-				<img class="pater__img" src="img/HackReactorLogo.svg" alt="Hack Reactor" />
-				<div class="pater__text">
-					<h2 class="pater__title">Your CS success starts here.</h2>
-					<p class="pater__desc">Hack Reactor's 12-week immersive coding school is accepting applications for onsite and online courses. <strong>Apply now and become a software engineer.</strong></p>
-				</div>
-			</a> -->
-
 		</div>
 		<div class="page" ide="1">
 			<a href="#" class="inicioIcon">dale click 1</a>
-			<iframe src="http://next.openspending.org/viewer/embed/treemap/d736c199bc5c0f34d32da957f625cfe3:yearend_2015?measure=Pagado.sum&order=Pagado.sum%7Cdesc&visualizations%5B%5D=Treemap&groups%5B%5D=economic_classification_2.ID_OG" width="100" height="100" border="0" frameborder="0" seamless="on" style="border: 0px; margin: 0px; padding: 0px;top: 0;left: 0;width:100%;height:95%;"></iframe>
+
 		</div>
 		<div class="page" ide="2">
 			<a href="#" class="inicioIcon">dale click 2</a>
@@ -276,16 +249,6 @@
 			
 		</div>
 	</div><!-- /pages -->
-	<!--<nav class="pagenav">
-		<button class="pagenav__button pagenav__button--top" aria-label="Navigate top"><svg class="icon icon--rtop"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--left" aria-label="Navigate left"><svg class="icon"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--right" aria-label="Navigate right"><svg class="icon icon--rright"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--bottom" aria-label="Navigate bottom"><svg class="icon icon--rbottom"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--cornertopleft" aria-label="Navigate top left"><svg class="icon icon--rtopleft"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--cornertopright" aria-label="Navigate top right"><svg class="icon icon--rtopright"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--cornerbottomleft" aria-label="Navigate bottom left"><svg class="icon icon--rbottomleft"><use xlink:href="#icon-arrow"></use></svg></button>
-		<button class="pagenav__button pagenav__button--cornerbottomright" aria-label="Navigate bottom right"><svg class="icon icon--rbottomright"><use xlink:href="#icon-arrow"></use></svg></button>
-	</nav> -->
 </main>
 	
 <script src="js/jquery-2.1.0.js" type="text/javascript"></script>
@@ -339,10 +302,9 @@
 				var nextPage = pages[currentPage];
 				classie.add(nextPage, 'page--animate-' + direction);
 			},
-			onEnd : function(direction) {
+			onEnd : function(direction, prevPage) {
 				// remove class page--animate-[direction] from next page
-				var nextPage = pages[antPage];
-				console.log(antPage);
+				var nextPage = pages[prevPage];
 				nextPage.className = 'page';
 			}
 		};
@@ -403,14 +365,6 @@
 		reveal('bottom', '8', searchAntPage());
 		return false;
 	});
-	// document.querySelector('button.pagenav__button--top').addEventListener('click', function() { reveal('top'); });
-	// document.querySelector('button.pagenav__button--left').addEventListener('click', function() { reveal('left'); });
-	// document.querySelector('button.pagenav__button--right').addEventListener('click', function() { reveal('right'); });
-	// document.querySelector('button.pagenav__button--bottom').addEventListener('click', function() { reveal('bottom'); });
-	// document.querySelector('button.pagenav__button--cornertopleft').addEventListener('click', function() { reveal('cornertopleft'); });
-	// document.querySelector('button.pagenav__button--cornertopright').addEventListener('click', function() { reveal('cornertopright'); });
-	// document.querySelector('button.pagenav__button--cornerbottomleft').addEventListener('click', function() { reveal('cornerbottomleft'); });
-	// document.querySelector('button.pagenav__button--cornerbottomright').addEventListener('click', function() { reveal('cornerbottomright'); });
 
 	// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
 	function reveal(direction, ide, antIde) {
