@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/transitions.css" />
 	<link rel="stylesheet" type="text/css" href="css/objetiv-pages.css" />
 	<link rel="stylesheet" type="text/css" href="css/hover-effects.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
@@ -192,6 +193,60 @@
 				</section>
 			</div>
 		</div>
+
+		<nav id="cd-vertical-nav" style="visibility:hidden">
+			<ul>
+				<li>
+					<a href="#" id="navidotPaz" data-number="1">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #24AF85;">México en Paz</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotInclu" data-number="2">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #B297C7">México Incluyente</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotEdu" data-number="3">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #6FBA69">México con Educación de Calidad</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotPros" data-number="4">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #EE7436">México Próspero</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotGlob" data-number="5">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #118889">México con Responsabilidad Global</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotDemoc" data-number="6">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #5BA199">Democratizar la Productivadad</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotCerca" data-number="7">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #BCCF02">Gobierno Cercano y Moderno</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="navidotGene" data-number="8">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #E84040">Perspectiva de Género</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
 		<div class="page" ide="1">
 			<div class="header-wrap bg-paz">
     			<h2>Programa Sectorial de Gobernación</h2>
@@ -361,39 +416,47 @@
 	// clicking the page nav buttons
 	$(".inicioIcon").click(function(){
 		reveal('bottom', '0', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","hidden");
 		return false;
 	});
 	$("#pazIcon").click(function(){
 		reveal('bottom', '1', searchAntPage());
-		
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#incluyenteIcon").click(function(){
 		reveal('bottom', '2', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#educacionIcon").click(function(){
 		reveal('bottom', '3', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#prosperoIcon").click(function(){
 		reveal('bottom', '4', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#globalIcon").click(function(){
 		reveal('bottom', '5', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#productividadIcon").click(function(){
 		reveal('bottom', '6', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#cercanoIcon").click(function(){
 		reveal('bottom', '7', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 	$("#generoIcon").click(function(){
 		reveal('bottom', '8', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","visible");
 		return false;
 	});
 
@@ -409,6 +472,48 @@
 
 		revealer.reveal(direction, callbackTime, callbackFn, ide, currentPage);
 	}
+
+	//Eventos de click de Navegador Lateral
+	$("#navidotPaz").click(function(){
+		reveal('bottom', '1', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotInclu").click(function(){
+		reveal('bottom', '2', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotEdu").click(function(){
+		reveal('bottom', '3', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotPros").click(function(){
+		reveal('bottom', '4', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotGlob").click(function(){
+		reveal('bottom', '5', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotDemoc").click(function(){
+		reveal('bottom', '6', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotCerca").click(function(){
+		reveal('bottom', '7', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
+	$("#navidotGene").click(function(){
+		reveal('bottom', '8', searchAntPage());
+		//updateNavigation()
+		return false;
+	});
 
 })();
 </script>
