@@ -1,20 +1,31 @@
 @font-face {
-	font-family: 'SoberanaSans';
-	src: url('fonts/SoberanaSans/SoberanaSans-Light.otf');
-	font-weight: normal;
+	font-family: 'Soberana_Bold';
+	src: url('fonts/soberana/SoberanaSans-Bold.eot');
+	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Soberana_Bold';
-	src: url('fonts/SoberanaSans/SoberanaSans-Bold.otf');
-	font-weight: normal;
+	font-family: 'SoberanaSans';
+	src: url('fonts/soberana/SoberanaSans-Light.eot');
+	src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+		url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+		url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+		url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+	font-weight: 300;
 	font-style: normal;
 }
 
+
 .page {
 	/* padding: 6.5em; */
-	background: #66c6ff;
+	background: #fff;
 	visibility: hidden;
 }
 

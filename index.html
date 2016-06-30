@@ -3,20 +3,36 @@
 	<meta charset="utf-8">
 	<title>:: Plan Nacional de Desarrollo ::</title>
 	
-	<link rel="stylesheet" href="css/buttons.css"/>
-	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/transitions.css" />
 	<link rel="stylesheet" type="text/css" href="css/objetiv-pages.css" />
 	<link rel="stylesheet" type="text/css" href="css/hover-effects.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/loader.css" />
+	<link rel="stylesheet" type="text/css" href="css/navi-vertical.css">
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
 	<meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
 </head>
 <body>
-
+<div id="loading">
+<div id="loading-center">
+<div id="loading-center-absolute">
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+<div class="object"></div>
+</div>
+</div>
+ 
+</div>
 <!-- SITE LOADER-->
 <div class="siteLoader">
 	<div class="head-button"></div>
@@ -195,7 +211,7 @@
 		</div>
 
 		<nav id="cd-vertical-nav" style="visibility:hidden">
-			<ul>
+			<ul class="nostyle">
 				<li>
 					<a href="#" id="navidotPaz" data-number="1">
 						<span class="cd-dot"></span>
@@ -253,70 +269,99 @@
 			</div>
 			<div id="container">
 				<h1 class="title">Objetivos</h1>
-				<a href="#" class="inicioIcon">dale click 1</a>
+				<!-- <a href="#" class="inicioIcon">dale click 1</a> -->
 			
 				<div class="content">
 					<div class="grid">
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-1">
 							<img src="images/1.jpg" />
 							<figcaption>
 								<h2><span>1</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-2">
 							<img src="images/2.jpg" alt="img04"/>
 							<figcaption>
 								<h2><span>2</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-3">
 							<img src="images/1.jpg" alt="img15"/>
 							<figcaption>
 								<h2><span>3</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
 					</div>
 					<div class="grid">
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-4">
 							<img src="images/1.jpg" alt="img15"/>
 							<figcaption>
 								<h2><span>4</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-5">
 							<img src="images/2.jpg" alt="img04"/>
 							<figcaption>
 								<h2><span>5</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-6">
 							<img src="images/2.jpg" alt="img04"/>
 							<figcaption>
 								<h2><span>6</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
-						<figure class="effect-chico">
+						<figure class="effect-chico" ide="obj-7">
 							<img src="images/2.jpg" alt="img04"/>
 							<figcaption>
 								<h2><span>7</span></h2>
 								<p>Chico's main fear was missing the morning bus.</p>
-								<a href="#">View more</a>
+								<img src="images/mira.png" class="mira" />
 							</figcaption>			
 						</figure>
 					</div>
 				</div>
+
+				<div class="content-buttons">
+					<button class="btn btn-paz btn-3a icon-search">Programa</button>
+					<button class="btn btn-paz btn-3a icon-search">Decreto</button>
+					<button class="btn btn-paz btn-3b icon-cloud-download">Logros (LD)</button>
+					<button class="btn btn-paz btn-3b icon-cloud-download">Datos abiertos</button>
+				</div>
+				<div class="content-buttons">
+					<button class="btn btn-paz-1 btn-3e"><span>11</span> Instituciones Participantes</button>
+					<button class="btn btn-paz-1 btn-1b">
+						Descarga la <span>Guía Rápida</span> del Programa
+						<img src="images/guia_ciu.png">
+					</button>
+				</div>
+			</div>
+			<div class="hero bg-paz">
+    			<h2>Programa Sectorial de Gobernación</h2>
+			</div>
+			<div class="footer-wrap bg-inicio">
+    			<h2><span>Objetivo 1</span> Promover y fortalecer la gobernabilidad democrática</h2>
+			</div>
+
+
+
+			<div id="container">
+				<h1 class="title">Objetivos</h1>
+				<a id="obj-1" href="#" class="inicioIcon">dale click 1</a>
+			
+				
 			</div>
 
 		</div>
@@ -350,13 +395,14 @@
 		</div>
 	</div><!-- /pages -->
 </main>
-	
+
 <script src="js/jquery-2.1.0.js" type="text/javascript"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script src="js/modernizr_2.8.2.js" type="text/javascript"></script>
 <script src="js/loader.pnd.js" type="text/javascript"></script>
 <script src="js/plugins/PageRevealEffects/js/modernizr-custom.js"></script>
 <script src="js/plugins/PageRevealEffects/js/classie.js"></script>
 <script src="js/plugins/PageRevealEffects/js/main.js"></script>
+
 
 <script>
 (function() {
@@ -514,6 +560,29 @@
 		//updateNavigation()
 		return false;
 	});
+
+	function goToByScroll(id){
+          // Reove "link" from the ID
+        id = id.replace("link", "");
+          // Scroll
+        $('html,body').animate({
+            scrollTop: $("#"+id).offset().top
+        }, 'slow');
+    }
+
+    $("figure.effect-chico").click(function(e) { 
+          // Prevent a page reload when a link is pressed
+        e.preventDefault(); 
+        $("#loading").fadeIn(500);
+          // Call the scroll function++
+        goToByScroll($(this).attr("ide"));           
+    });
+
+    $("#loading-center").click(function() {
+		$("#loading").fadeOut(500);
+	});
+
+	$("#loading").fadeOut(0);
 
 })();
 </script>

@@ -1,13 +1,27 @@
 @font-face {
-	font-weight: normal;
+	font-family: 'Soberana_Sans_Bold';
+	src: url('fonts/soberana/SoberanaSans-Bold.eot');
+	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+	font-weight: bold;
 	font-style: normal;
-	font-family: 'feathericons';
-	src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
-	src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
-		url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
-		url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
-		url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
 }
+
+@font-face {
+	font-family: 'Soberana_Sans';
+	src: url('fonts/soberana/SoberanaSans-Light.eot');
+	src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+		url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+		url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+		url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
 
 .grid {
 	display: -webkit-flex;
@@ -49,6 +63,7 @@
 	color: #462b60;
 	text-transform: uppercase;
 	font-size: 1.7em;
+	font-family: Soberana_Sans;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -83,6 +98,7 @@
 }
 
 .grid figure h2 span {
+	font-family: Soberana_Sans_Bold;
 	font-weight: 800;
 }
 
@@ -1035,7 +1051,7 @@ figure.effect-zoe p.icon-links a {
 figure.effect-zoe p.icon-links a span::before {
 	display: inline-block;
 	padding: 8px 10px;
-	font-family: 'feathericons';
+	font-family: Soberana_Sans;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -1130,14 +1146,27 @@ figure.effect-chico p {
 }
 
 figure.effect-chico h2 {
-	padding: 20% 0 20px 0;
+	padding: 15px 0 15px 0;
 }
 
 figure.effect-chico p {
 	margin: 0 auto;
 	max-width: 200px;
+	font-size: 0.5em;
 	-webkit-transform: scale(1.5);
 	transform: scale(1.5);
+}
+
+figure.effect-chico img.mira {
+	opacity: inherit;
+	position: absolute;
+	left: 44%;
+	top: 75%;
+	min-height: 40px;
+	max-width: 40px;
+	max-height: 40px;
+	-webkit-transform: none;
+	transform: none;
 }
 
 figure.effect-chico:hover figcaption::before,
@@ -1145,6 +1174,11 @@ figure.effect-chico:hover p {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
+}
+
+figure.effect-chico:hover img.mira{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 @media screen and (max-width: 50em) {
