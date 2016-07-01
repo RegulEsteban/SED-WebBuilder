@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/hover-effects.css" />
 	<link rel="stylesheet" type="text/css" href="css/loader.css" />
 	<link rel="stylesheet" type="text/css" href="css/navi-vertical.css">
+	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-style.css" media="screen,projection"/>
+  	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-font-awesome.min.css"/>
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
@@ -213,6 +215,12 @@
 		<nav id="cd-vertical-nav" style="visibility:hidden">
 			<ul class="nostyle">
 				<li>
+					<a href="#" id="navidotIni" data-number="0">
+						<span class="cd-dot"></span>
+						<span class="cd-label" style="background-color: #462B60;">Inicio</span>
+					</a>
+				</li>
+				<li>
 					<a href="#" id="navidotPaz" data-number="1">
 						<span class="cd-dot"></span>
 						<span class="cd-label" style="background-color: #24AF85;">México en Paz</span>
@@ -262,6 +270,87 @@
 				</li>
 			</ul>
 		</nav>
+
+		<div id="id-side-menu"class="side-menu-header" style="visibility:hidden">
+	        <a class="menu-icon" href="#"><img src="images/menu_bar.png"></img></a>
+	        <ul class="side-menu">
+	            <h2 class="title-side-menu">Menú</h2>
+	            <li class="row">
+		            <ul class="icon-list">
+		              	<li class="metro ini full">
+		                	<a class="julioclass" href="#" id="side_menu_0">
+		                  		<img src= "images/home.png"></img>
+		                  		<span class="description-icons-pnd-lg"><span>Inicio</span></span>
+		                	</a>
+		              	</li>
+		            </ul>
+	            </li>
+	            <li class="row">
+		            <ul class="icon-list">
+		              	<li class="metro paz half">
+		                	<a class="julioclass" href="#" id="side_menu_1">
+		                  		<img src="images/mex_paz_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>México en Paz</span></span>
+		                	</a>
+		              	</li>
+		              	<li class="metro inclu half">
+		                	<a class="julioclass" href="#" id="side_menu_2">
+		                  		<img src= "images/mex_inclu_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>México Incluyente</span></span>
+		                	</a>
+		              	</li>
+		            </ul>
+	            </li>
+	            <li class="row">
+	            	<ul class="icon-list">
+	              		<li class="metro edu half">
+	                		<a class="julioclass" href="#" id="side_menu_3">
+	                  			<img src= "images/mex_edu_blan.png"></img>
+	                  			<span class="description-icons-pnd"><span>México con Educación de Calidad</span></span>
+	                		</a>
+	              		</li>
+	              		<li class="metro pros half">
+	                		<a class="julioclass" href="#" id="side_menu_4">
+				                <img src= "images/mex_pros_blan.png"></img>
+				                <span class="description-icons-pnd"><span>México Próspero</span></span>
+	                		</a>
+	              		</li>
+	            	</ul>
+	            </li>
+	            <li class="row">
+		            <ul class="icon-list">
+		              	<li class="metro glob half">
+		                	<a class="julioclass" href="#" id="side_menu_5">
+		                  		<img src= "images/mex_global_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>México con Responsabilidad Global</span></span>
+		                	</a>
+		              	</li>
+		              	<li class="metro democ half">
+		                	<a class="julioclass" href="#" id="side_menu_6">
+		                  		<img src= "images/democra_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>Democratizar la Productividad</span></span>
+		                	</a>
+		              	</li>
+		            </ul>
+	            </li>
+	            <li class="row">
+		            <ul class="icon-list">
+		              	<li class="metro cerca half">
+		                	<a class="julioclass" href="#" id="side_menu_7">
+		                  		<img src= "images/cerca_moder_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>Gobierno Cercano y Moderno</span></span>
+		                	</a>
+		              	</li>
+		              	<li class="metro gene half">
+		                	<a class="julioclass" href="#" id="side_menu_8">
+		                  		<img src= "images/genero_blan.png"></img>
+		                  		<span class="description-icons-pnd"><span>Perspectiva de Género</span></span>
+		                	</a>
+		              	</li>
+		            </ul>
+	            </li>
+	        </ul>
+      	</div>
 
 		<div class="page" ide="1">
 			<div class="header-wrap bg-paz">
@@ -403,7 +492,8 @@
 <script src="js/plugins/PageRevealEffects/js/classie.js"></script>
 <script src="js/plugins/PageRevealEffects/js/main.js"></script>
 
-
+<script src="js/navi-side-menu-jquery.min.js"></script>
+<script src="js/navi-side-menu.js"></script>
 <script>
 (function() {
 	var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
@@ -463,46 +553,55 @@
 	$(".inicioIcon").click(function(){
 		reveal('bottom', '0', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","hidden");
+		$("#id-side-menu").css("visibility","hidden");
 		return false;
 	});
 	$("#pazIcon").click(function(){
 		reveal('bottom', '1', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#incluyenteIcon").click(function(){
 		reveal('bottom', '2', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#educacionIcon").click(function(){
 		reveal('bottom', '3', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#prosperoIcon").click(function(){
 		reveal('bottom', '4', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#globalIcon").click(function(){
 		reveal('bottom', '5', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#productividadIcon").click(function(){
 		reveal('bottom', '6', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#cercanoIcon").click(function(){
 		reveal('bottom', '7', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 	$("#generoIcon").click(function(){
 		reveal('bottom', '8', searchAntPage());
 		$("#cd-vertical-nav").css("visibility","visible");
+		$("#id-side-menu").css("visibility","visible");
 		return false;
 	});
 
@@ -520,44 +619,42 @@
 	}
 
 	//Eventos de click de Navegador Lateral
+	$("#navidotIni").click(function(){
+		reveal('bottom', '0', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","hidden");
+		$("#id-side-menu").css("visibility","hidden");
+		return false;
+	});
 	$("#navidotPaz").click(function(){
 		reveal('bottom', '1', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotInclu").click(function(){
 		reveal('bottom', '2', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotEdu").click(function(){
 		reveal('bottom', '3', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotPros").click(function(){
 		reveal('bottom', '4', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotGlob").click(function(){
 		reveal('bottom', '5', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotDemoc").click(function(){
 		reveal('bottom', '6', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotCerca").click(function(){
 		reveal('bottom', '7', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 	$("#navidotGene").click(function(){
 		reveal('bottom', '8', searchAntPage());
-		//updateNavigation()
 		return false;
 	});
 
@@ -583,6 +680,91 @@
 	});
 
 	$("#loading").fadeOut(0);
+
+
+	$("#side_menu_0").click(function(){
+		reveal('bottom', '0', searchAntPage());
+		$("#cd-vertical-nav").css("visibility","hidden");
+		$("#id-side-menu").css("visibility","hidden");
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_1").click(function(){
+		reveal('bottom', '1', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_2").click(function(){
+		reveal('bottom', '2', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_3").click(function(){
+		reveal('bottom', '3', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_4").click(function(){
+		reveal('bottom', '4', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_5").click(function(){
+		reveal('bottom', '5', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_6").click(function(){
+		reveal('bottom', '6', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_7").click(function(){
+		reveal('bottom', '7', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
+	$("#side_menu_8").click(function(){
+		reveal('bottom', '8', searchAntPage());
+		$('ul.side-menu').removeClass('open-side-menu');
+      	$('body').removeClass('open-side-menu');
+      	// Reset menu on close
+      	$('ul.side-menu li').css("top", "100%");
+	    $('ul.side-menu h2').css("top", "-60px");
+		return false;
+	});
 
 })();
 </script>
