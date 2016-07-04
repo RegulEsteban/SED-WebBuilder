@@ -8,103 +8,8 @@ ul.nostyle {
   list-style: none;
 }
 
-/* -------------------------------- 
-
-Modules - reusable parts of our design
-
--------------------------------- */
-.cd-img-replace {
-  /* replace text with a background-image */
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-}
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
 .clasecss{
 	background-color: #26AE85;
-}
-
-.cd-section {
-  min-height: 100%;
-  position: relative;
-  padding: 2em 0;
-}
-.cd-section:nth-of-type(odd) {
-  background-color: #3e3947;
-}
-.cd-section:nth-of-type(odd) p {
-  color: #898099;
-}
-.cd-section:nth-of-type(even) {
-  background-color: #745360;
-}
-.cd-section:nth-of-type(even) p {
-  color: #bda3ad;
-}
-.cd-section h1, .cd-section p {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  width: 90%;
-  max-width: 768px;
-  text-align: center;
-}
-.cd-section img {
-  position: relative;
-  width: 100%;
-  max-width: 768px;
-  text-align: center;
-  vertical-align: center;
-}
-
-.cd-section h1 {
-  color: white;
-  font-weight: 300;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-.cd-section p {
-  line-height: 1.6;
-}
-@media only screen and (min-width: 768px) {
-  .cd-section h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-  }
-  .cd-section p {
-    font-size: 20px;
-    font-size: 1.25rem;
-    line-height: 2;
-  }
-}
-
-.cd-scroll-down {
-  position: absolute;
-  left: 50%;
-  right: auto;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: 20px;
-  width: 38px;
-  height: 44px;
-  background: url("../img/cd-arrow-bottom.svg") no-repeat center center;
 }
 
 /* No Touch devices */
@@ -122,7 +27,7 @@ Main components
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 999999;
+  z-index: 5;
 }
   @media (max-width: 1240px) {
     #cd-vertical-nav {
@@ -142,8 +47,8 @@ Main components
 .no-touch #cd-vertical-nav a {
   display: inline-block;
   /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
 }
 .no-touch #cd-vertical-nav a:after {
   content: "";
@@ -198,7 +103,6 @@ Main components
   transform-origin: 50% 50%;
 }
 .no-touch #cd-vertical-nav .cd-label {
-  /*background-color: #f8f8f8;*/
   position: relative;
   margin-right: 10px;
   padding: .4em .5em;

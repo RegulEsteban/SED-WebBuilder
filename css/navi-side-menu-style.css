@@ -22,6 +22,18 @@
   font-style: normal;
 }
 
+  @media (max-width: 1240px) {
+    #cd-vertical-nav {
+      display: none; 
+    } 
+  }
+
+  @media (min-width: 1241px){
+    #id-side-menu{
+      display: none;
+    }
+  }
+
 h2.title-side-menu, a.julioclass{
   margin: 0;
   padding: 0;
@@ -70,6 +82,7 @@ ul.side-menu {
   height: 100%;
   background-color: #fff;
   z-index: -1;
+  overflow: auto;
 
   -webkit-transition: right .3s;
   transition: right .3s;

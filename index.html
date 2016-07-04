@@ -667,7 +667,6 @@
 		return false;
 	});
 	$("#navidotPaz").click(function(){
-		console.log(searchAntPage());
 		if(searchAntPage() === 1){
 			return;
 		}else{
@@ -676,32 +675,60 @@
 		}
 	});
 	$("#navidotInclu").click(function(){
+		if(searchAntPage() === 2){
+			return;
+		}else{
 		reveal('bottom', '2', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotEdu").click(function(){
+		if(searchAntPage() === 3){
+			return;
+		}else{
 		reveal('bottom', '3', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotPros").click(function(){
+		if(searchAntPage() === 4){
+			return;
+		}else{
 		reveal('bottom', '4', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotGlob").click(function(){
+		if(searchAntPage() === 5){
+			return;
+		}else{
 		reveal('bottom', '5', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotDemoc").click(function(){
+		if(searchAntPage() === 6){
+			return;
+		}else{
 		reveal('bottom', '6', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotCerca").click(function(){
+		if(searchAntPage() === 7){
+			return;
+		}else{
 		reveal('bottom', '7', searchAntPage());
 		return false;
+		}
 	});
 	$("#navidotGene").click(function(){
+		if(searchAntPage() === 8){
+			return;
+		}else{
 		reveal('bottom', '8', searchAntPage());
 		return false;
+		}
 	});
 
 	function goToByScroll(id){
@@ -740,6 +767,9 @@
 		return false;
 	});
 	$("#side_menu_1").click(function(){
+		if(searchAntPage() === 1){
+			return;
+		}else{
 		reveal('bottom', '1', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -747,8 +777,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_2").click(function(){
+		if(searchAntPage() === 2){
+			return;
+		}else{
 		reveal('bottom', '2', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -756,8 +790,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_3").click(function(){
+		if(searchAntPage() === 3){
+			return;
+		}else{
 		reveal('bottom', '3', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -765,8 +803,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_4").click(function(){
+		if(searchAntPage() === 4){
+			return;
+		}else{
 		reveal('bottom', '4', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -774,8 +816,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_5").click(function(){
+		if(searchAntPage() === 5){
+			return;
+		}else{
 		reveal('bottom', '5', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -783,8 +829,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_6").click(function(){
+		if(searchAntPage() === 6){
+			return;
+		}else{
 		reveal('bottom', '6', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -792,8 +842,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_7").click(function(){
+		if(searchAntPage() === 7){
+			return;
+		}else{
 		reveal('bottom', '7', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -801,8 +855,12 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 	$("#side_menu_8").click(function(){
+		if(searchAntPage() === 8){
+			return;
+		}else{
 		reveal('bottom', '8', searchAntPage());
 		$('ul.side-menu').removeClass('open-side-menu');
       	$('body').removeClass('open-side-menu');
@@ -810,6 +868,7 @@
       	$('ul.side-menu li').css("top", "100%");
 	    $('ul.side-menu h2').css("top", "-60px");
 		return false;
+		}
 	});
 
 })();
