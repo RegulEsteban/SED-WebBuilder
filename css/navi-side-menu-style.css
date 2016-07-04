@@ -1,10 +1,33 @@
+@font-face {
+  font-family: 'SoberanaSans_Bold';
+  src: url('fonts/soberana/SoberanaSans-Bold.eot');
+  src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+    url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+    url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+    url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SoberanaSans_Light';
+  src: url('fonts/soberana/SoberanaSans-Light.eot');
+  src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+    url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+    url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+    url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
 
 h2.title-side-menu, a.julioclass{
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: SoberanaSans_Light;
   vertical-align: baseline;
 }
 
@@ -25,7 +48,7 @@ ul.icon-list, ul.side-menu {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: SoberanaSans_Light;
   vertical-align: baseline;
 }
 
@@ -45,7 +68,7 @@ ul.side-menu {
   right: -250px;
   width: 250px;
   height: 100%;
-  background-color: #444;
+  background-color: #fff;
   z-index: -1;
 
   -webkit-transition: right .3s;
@@ -68,7 +91,7 @@ ul.side-menu {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: SoberanaSans_Light;
     vertical-align: baseline;
 
     -webkit-transition: top .3s;
@@ -110,9 +133,9 @@ ul.side-menu {
       top: -60px;
       font-size: 23px;
       line-height: 60px;
-      height: 60px;
-      background-color: #555;
-
+      height: 50px;
+      background-color: #fff;
+      font-family: SoberanaSans_Light;
       -webkit-transition: top .3s;
       transition: top .3s;
     }
@@ -172,6 +195,7 @@ ul.side-menu {
       display: table-cell;
       position: relative;
       vertical-align: middle;
+      font-family: SoberanaSans_Light;
     }
 
     ul.icon-list li:hover span.description-icons-pnd {
@@ -212,6 +236,7 @@ ul.side-menu {
       display: table-cell;
       position: relative;
       vertical-align: middle;
+      font-family: SoberanaSans_Light;
     }
 
     ul.icon-list li:hover span.description-icons-pnd-lg {

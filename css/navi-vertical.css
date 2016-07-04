@@ -124,13 +124,13 @@ Main components
   transform: translateY(-50%);
   z-index: 999999;
 }
-  @media (max-width: 1024px) {
+  @media (max-width: 1240px) {
     #cd-vertical-nav {
       display: none; 
     } 
   }
 
-  @media (min-width: 1025px){
+  @media (min-width: 1241px){
     #id-side-menu{
       display: none;
     }

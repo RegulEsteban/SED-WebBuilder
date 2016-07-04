@@ -12,7 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="css/loader.css" />
 	<link rel="stylesheet" type="text/css" href="css/navi-vertical.css">
 	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-style.css" media="screen,projection"/>
-  	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-font-awesome.min.css"/>
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
@@ -356,10 +355,8 @@
 			<div class="header-wrap bg-paz">
     			<h2>Programa Sectorial de Gobernación</h2>
 			</div>
-			<div id="container">
+			<div class="container-obj">
 				<h1 class="title">Objetivos</h1>
-				<!-- <a href="#" class="inicioIcon">dale click 1</a> -->
-			
 				<div class="content">
 					<div class="grid">
 						<figure class="effect-chico" ide="obj-1">
@@ -440,19 +437,64 @@
 			<div class="hero bg-paz">
     			<h2>Programa Sectorial de Gobernación</h2>
 			</div>
-			<div class="footer-wrap bg-inicio">
+			<div id="obj-1" class="footer-wrap bg-inicio">
     			<h2><span>Objetivo 1</span> Promover y fortalecer la gobernabilidad democrática</h2>
 			</div>
-
-
-
-			<div id="container">
-				<h1 class="title">Objetivos</h1>
-				<a id="obj-1" href="#" class="inicioIcon">dale click 1</a>
-			
-				
+			<div class="container-obj">
+				<div class="selectdiv">
+					<label>
+				    	<select>
+				        	<option selected><span>Indicador 1 de 3</span> Percepción ciudadana de incidencia en políticas públicas</option>
+				          	<option>Option 1</option>
+				          	<option>Option 2</option>
+				          	<option>Last long option</option>
+				    	</select>
+				  	</label>
+				</div>
+				<section class="container-divs">
+					<div class="left-graf">
+						<div class="fuente">
+    						<h2 class="t-paz">Fuente: <span>Encuesta Nacional de Cultura Política y Prácticas Ciudadanas (ENCUP)</span></h2>
+    						<h3 class="t-inicio"><a href="http://www.encup.gob.mx" target="_blank">http://www.encup.gob.mx</a></h3>
+						</div>
+					</div>
+					<div class="right-desc">
+						<div class="question">
+    						<h2 class="t-paz">¿Cómo se mide?</h2>
+    						<p>Mide el porcentaje de ciudadanos entrevistados que consideran que en el futuro tendrán más oportunidad</p>
+						</div>
+						<hr>
+						<div class="question">
+    						<h2 class="t-paz">¿Cada cuándo?</h2>
+    						<p>Bienal</p>
+						</div>
+						<hr>
+						<div class="question">
+    						<h2 class="t-paz">Unidad para el Desarrollo Político y Fomento Cívico (UDPyFC), Secretaría de Gobernación</h2>
+						</div>
+						<div class="question">
+    						<h1 class="t-paz">8</h1>
+						</div>
+						<div class="question">
+    						<h2 class="t-paz">Programas Presupuestarios Vinculados</h2>
+						</div>
+						<div class="scroll-list bg-paz">
+						  	<ul>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+							    <li>text</li>
+						  	</ul>
+						</div>
+					</div>
+				</section>
 			</div>
-
 		</div>
 		<div class="page" ide="2">
 			<a href="#" class="inicioIcon">dale click 2</a>
@@ -488,13 +530,12 @@
 <script src="js/jquery-2.1.0.js" type="text/javascript"></script>
 <script src="js/modernizr_2.8.2.js" type="text/javascript"></script>
 <script src="js/loader.pnd.js" type="text/javascript"></script>
-<script src="js/plugins/PageRevealEffects/js/modernizr-custom.js"></script>
-<script src="js/plugins/PageRevealEffects/js/classie.js"></script>
-<script src="js/plugins/PageRevealEffects/js/main.js"></script>
+<script src="js/modernizr-custom.js" type="text/javascript"></script>
+<script src="js/classie.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script src="js/navi-side-menu.js" type="text/javascript"></script>
 
-<script src="js/navi-side-menu-jquery.min.js"></script>
-<script src="js/navi-side-menu.js"></script>
-<script>
+<script type="text/javascript">
 (function() {
 	var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
 		currentPage = 0,

@@ -33,7 +33,8 @@ div {
 
 /* Pattern styles */
 .container {
-  display: flex;
+    display: -webkit-flex;
+    display: flex;
 }
 
 .left-half {
