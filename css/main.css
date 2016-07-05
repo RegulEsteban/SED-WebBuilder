@@ -289,84 +289,73 @@ a {
 
 @media all and (max-width: 1350px) {
 	 h1 { font-size:30px; line-height:120%;}
-	 #copy {margin: -220px -160px auto; width:250px; }
-	 .copyright { display:none; }
-	/* .block { display:none; }*/
-	 p { min-width:0;}
-	 .right { width:40%;}
-	 .left { width:60%;}
-	 .navContainer { left:60%;}
+	 
 	  h1.projectTotal {margin-left: 110px; }
-	  #viewText{ left:30.5%;}
-	  .viewProjectWrapper{ left:30.5%;}
 }
 
 
 @media all and (max-width: 820px) {
-	.left {  display:none !important; width:100% !important; }
-	body { 	overflow-x:hidden; }
-
-	.viewProjectWrapper{ display:none !important; visibility:hidden !important;}
-	#viewText{ display:none !important; visibility:hidden !important;}
+	.loaderText { 
+		font-size:10px !important;
+	}
 	
-	.loaderText { font-size:10px !important;}
-	span.director {padding-bottom: 170px !important;}
-	
-	.project {margin-left: 0; border-right: 0px;}
-	
-	
+	.project {
+		margin-left: 0; 
+		border-right: 0px;
+	}
 
-.role {
-	margin-right: 0px;
-}
-#projectInfoLeft {
-   display: block;
-    float: right;
-    margin-top: -90px;
-    padding-right: 35px;
-    top: 50%;
-    width: 100%;
-   
-}
-#envolvment {
-    font-size: 20px;
-    margin-right: 0px;
-}
-#projectInfoRight {
-	border: none;
-    height: 100%;
-    margin-top: -276px;
-    overflow: hidden;
-    position: absolute;
-    right: 35px;
-    top: 50%;
-    width: 100%;
-  
-}
+	.role {
+		margin-right: 0px;
+	}
 
-.menuOverlay {  display: flex;}
+	#projectInfoLeft {
+	   display: block;
+	    float: right;
+	    margin-top: -90px;
+	    padding-right: 35px;
+	    top: 50%;
+	    width: 100%;
+	   
+	}
 
-.objective2{
-	height: 200px;
-}
+	#envolvment {
+	    font-size: 20px;
+	    margin-right: 0px;
+	}
 
+	#projectInfoRight {
+		border: none;
+	    height: 100%;
+	    margin-top: -276px;
+	    overflow: hidden;
+	    position: absolute;
+	    right: 35px;
+	    top: 50%;
+	    width: 100%;
+	  
+	}
 
-.bjective {
-    font-size: 35px;
-}
+	.menuOverlay {  display: flex;}
 
-h1.projectTitle {
-    font-size: 25px;
-    left: -5%;
-   
-}
+	.objective2{
+		height: 200px;
+	}
 
-h1.projectTitleInverse {
-    font-size: 25px;
-    left: 0%;
-}
+	.bjective {
+	    font-size: 35px;
+	}
 
-	
+	h1.projectTitle {
+	    font-size: 25px;
+	    left: -5%;
+	   
+	}
+
+	h1.projectTitleInverse {
+	    font-size: 25px;
+	    left: 0%;
+	}
+
 }
 
 @media all and (max-width: 620px) {
