@@ -48,6 +48,7 @@
 	float: right;
 	overflow: hidden;
 	margin: 0.5% 0.5%;
+	margin-top: 10px;
 	border: 1px #000;
 	max-width: 326px;
 	max-height: 242px;
@@ -55,6 +56,12 @@
 	background: #fff;
 	text-align: center;
 	cursor: pointer;
+}
+
+.grid *::after, 
+.grid *::before{
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
 }
 
 .grid figure img {
@@ -78,6 +85,8 @@
 .grid figure figcaption::before,
 .grid figure figcaption::after {
 	pointer-events: none;
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
 }
 
 .grid figure figcaption,
@@ -1114,6 +1123,19 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 /*---------------*/
 /***** Chico *****/
 /*---------------*/
+
+figure.effect-chico,
+figure.effect-chico::after,
+figure.effect-chico::before,
+figure.effect-chico img,
+figure.effect-chico img::after,
+figure.effect-chico img::before,
+figure.effect-chico figcaption,
+figure.effect-chico figcaption::after,
+figure.effect-chico figcaption::before{
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
 
 figure.effect-chico img {
 	opacity: 0.1;

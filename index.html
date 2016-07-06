@@ -3,8 +3,8 @@
 	<meta charset="utf-8">
 	<title>:: Plan Nacional de Desarrollo ::</title>
 	
-	<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/transitions.css" />
 	<link rel="stylesheet" type="text/css" href="css/objetiv-pages.css" />
@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/loader.css" />
 	<link rel="stylesheet" type="text/css" href="css/navi-vertical.css">
 	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-style.css" media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
@@ -209,6 +210,16 @@
 					</article>
 				  </div>
 				</section>
+				<table id="programas_table" class="display" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>TITLE1</th>
+							<th>TITLE3</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="page" ide="1">
@@ -534,6 +545,8 @@
 <script src="js/classie.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 <script src="js/navi-side-menu.js" type="text/javascript"></script>
+<script src="js/jquery.csv.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript">
 (function() {
@@ -870,6 +883,107 @@
 		return false;
 		}
 	});
+
+	var mapColums = new Object();
+	var mapValues = [];
+
+	var table_prog = $('#programas_table').DataTable({
+		"columns": [
+            { "data": "TITLE1" },
+            { "data": "TITLE3" }
+        ]
+
+	});
+
+	$.ajax({
+		url : 'files/file.txt',
+		dataType : 'text',
+		async: true,
+		success : function load(d) {
+			var data = $.csv.toArrays(d);
+			console.log(data);
+			var html = generateTable(data);
+			/**************************
+			var html = generateTable(data);
+      		$('#programas_table').empty();
+      		$('#programas_table').html(html);
+      		/**************************/
+
+
+		}
+	});
+
+
+
+	function generateTable(data) {
+      var html = '';
+
+      if(typeof(data[0]) === 'undefined') {
+        return null;
+      }
+
+      if(data[0].constructor === String) {
+        html += '<tr>\r\n';
+        for(var item in data) {
+          html += '<td>' + data[item] + '</td>\r\n';
+        }
+        html += '</tr>\r\n';
+      }
+
+      /*if(data[0].constructor === Array) {
+        for(var row in data) {
+          html += '<tr>\r\n';
+          for(var item in data[row]) {
+            html += '<td>' + data[row][item] + '</td>\r\n';
+          }
+          html += '</tr>\r\n';
+        }
+      }*/
+
+      if(data[0].constructor === Array) {
+        for(var item in data[0]) {
+            mapColums[""+data[0][item]+""] = item;
+        }
+      }
+      
+      if(data[0].constructor === Array) {
+      	
+        for(var row in data) {
+          if(row > 0){
+          	var itemMap = {};
+          	itemMap["TITLE1"] = data[row][getValueColumn("TITLE1")];
+          	itemMap["TITLE3"] = data[row][getValueColumn("TITLE3")];
+          	console.log(itemMap);
+          	//table_prog.row.add(itemMap).draw();
+          	table_prog.row.add( {
+        "TITLE1":       "Tiger Nixon",
+        "TITLE3":   "System Architect"
+    } ).draw();
+
+			mapValues.push(itemMap);
+          }
+          
+        }
+        //console.log(JSON.stringify(mapValues));
+        //table_prog.rows.add(mapValues).draw();
+      }
+
+      if(data[0].constructor === Object) {
+        for(var row in data) {
+          html += '<tr>\r\n';
+          for(var item in data[row]) {
+            html += '<td>' + item + ':' + data[row][item] + '</td>\r\n';
+          }
+          html += '</tr>\r\n';
+        }
+      }
+      
+      return html;
+    }
+
+    function getValueColumn(k) {
+    	return mapColums[k];
+	}
 
 })();
 </script>

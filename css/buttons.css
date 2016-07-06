@@ -25,11 +25,11 @@
 	font-style: normal;
 }
 
-div {
+/*div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+}*/
 
 /* Pattern styles */
 .container {
@@ -95,6 +95,7 @@ div {
 }
 
 .item {
+    display: block;
     float: left;
     position: relative;
     text-align: center;
