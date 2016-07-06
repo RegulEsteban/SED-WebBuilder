@@ -46,10 +46,6 @@
 	font-style: normal;
 }
 
-*, *:after, *:before { 
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box; 
-}
 .clearfix:before, .clearfix:after { 
 	display: table; 
 	content: ''; 
@@ -190,6 +186,7 @@ h1.title {
 
 .left-graf {
 	flex: 1;
+	margin-top: 50px;
   	padding: 1rem;
   	text-align: center;
 }
@@ -273,7 +270,7 @@ h1.title {
 /******************************************/
 
 .bullets {
-	position: absolute;
+	position: static;
 	width: 100%;
 	bottom: 20px;
 	padding: 0;
@@ -281,28 +278,41 @@ h1.title {
 	text-align: center;
 }
 
+.bulletTitle span {
+	color: #462B60;
+	font-size: 16px;
+	text-align: center;
+	display: inline-block;
+	font-family: SoberanaSans_Light;
+	font-size: 20px;
+	margin: 5px 0px;
+}
+
 .bullets li {
 	display: inline-block;
 	width: 40px;
 	height: 20px;
-	border-radius: 50%;
 	margin: 0 3px;
-	background-image: url(../images/mira.png);
-	/*background: rgba( 255, 255, 255, 0.5 );*/
-
-	box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );
+	width: 80px;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-image: url(../images/mira_tiny.png);
+	/*background: rgba( 255, 255, 255, 0.5 );
+	box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );*/
 	cursor: pointer;
 
 	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
 }
 
-.bullets li:hover {
+/*.bullets li:hover {
 	background: rgba( 255, 255, 255, 0.8 );
-}
+}*/
 
 .bullets li.active {
+	display: none;
 	cursor: default;
-	background: #fff;
+	background: #000;
 }
 
 @media screen and (max-width: 400px) {
@@ -316,7 +326,7 @@ h1.title {
 
 /********* select **********/
 .selectdiv {
-  position: relative;
+  position: fixed;
   margin: 50px auto;
   margin-bottom: 0px;
   width: 90%;

@@ -128,18 +128,35 @@
     			<h2><span>Objetivo 1</span> Promover y fortalecer la gobernabilidad democrática</h2>
 			</div>
 			<div class="container-obj">
-				<div class="selectdiv">
-					<label>
-				    	<select id="indicador-obj-1">
-				        	<option selected><span>Indicador 1 de 3</span> Percepción ciudadana de incidencia en políticas públicas</option>
-				          	<option>Option 1</option>
-				          	<option>Option 2</option>
-				          	<option>Last long option</option>
-				    	</select>
-				  	</label>
+
+				<div id="login-box" class="login-popup">
+			        <a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+			        <h2 class="title-modal-popup-indicadores">Selecciona un Indicador para ver los detalles.</h2>
+			        <select name="Indicadores" size="1">
+			        	<option selected value="0">Seleccione un indicador</option>
+			        	<option value="1">Indicador Z</option>
+			        	<option value="2">Indicador Y</option>
+			        	<option value="3">Indicador X</option>
+			        </select>	
+			        <br>
+			        <button class="button-modal" id="-indicador">Aceptar</button>
 				</div>
+
 				<article class="kontext">
+					
 					<section class="container-divs layer show">
+						<div>
+							<div class="selectdiv">
+								<label>
+									<a href="#login-box" class="modal-window" id="modal-indicadores">
+							        	<div class="btn-indicator-pnd">
+							        		<span>Indicador 1 de 3</span> Percepción ciudadana de incidencia en políticas públicas
+							        	</div>
+						        	</a>
+							  	</label>
+							</div>
+						</div>
+
 						<div class="left-graf">
 							<div class="fuente">
 	    						<h2 class="t-paz">Fuente: <span>Encuesta Nacional de Cultura Política y Prácticas Ciudadanas (ENCUP)</span></h2>
@@ -223,13 +240,14 @@
 		</div>
 	</div><!-- /pages -->
 </main>
-	
+
 <script src="js/jquery-2.1.0.js" type="text/javascript"></script>
 <script src="js/modernizr_2.8.2.js"></script>
 <script src="js/plugins/PageRevealEffects/js/modernizr-custom.js"></script>
 <script src="js/plugins/PageRevealEffects/js/classie.js"></script>
 <script src="js/plugins/PageRevealEffects/js/main.js"></script>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="js/transitions.js"></script>
 
 <script>
@@ -363,6 +381,38 @@
 
 	$("#loading").fadeOut(0);
 
+	// Modal de Seleccion de Indicador
+	$('a.modal-window').click(function() {
+		
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
 
 })();
 </script>
@@ -388,6 +438,7 @@
 	// Create one bullet per layer
 	for( var i = 0, len = k.getTotal(); i < len; i++ ) {
 		var bullet = document.createElement( 'li' );
+		var coverTitle = $('<span class="bulletTitle">Objetivo '+(i+1)+'</span>').appendTo(bullet);
 		bullet.className = i === 0 ? 'active' : '';
 		bullet.setAttribute( 'index', i );
 		bullet.onclick = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
