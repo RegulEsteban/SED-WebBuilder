@@ -51,24 +51,11 @@
 .revealer,
 .revealer__layer,
 .quote,
-#loading {
+#loading,
+.scroll-list {
  display: flex;
  flex-direction: column;
  justify-content: center;
-}
-
-.btn-indicator-pnd {
-    border: solid;
-    font-family: Arial;
-    padding: 30px 45px;
-    background: white;
-    color: #462B60;
-    margin: 5px;
-    font-size: 22px;
-    line-height: 22px;
-    text-decoration: none;
-    display: inline-block;
-    width: 100%;
 }
 
 /*////////////////*/
