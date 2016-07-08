@@ -213,8 +213,8 @@
 				<table id="programas_table" class="display" cellspacing="0" width="100%">
 					<thead>
 						<tr>
-							<th>TITLE1</th>
-							<th>TITLE3</th>
+							<th>Programas</th>
+							<th>Tipo</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -368,31 +368,24 @@
 			</div>
 		</div>
 		<div class="page" ide="2">
-			<a href="#" class="inicioIcon">dale click 2</a>
 			
 		</div>
 		<div class="page" ide="3">
-			<a href="#" class="inicioIcon">dale click 3</a>
 			
 		</div>
 		<div class="page" ide="4">
-			<a href="#" class="inicioIcon">dale click 4</a>
 			
 		</div>
 		<div class="page" ide="5">
-			<a href="#" class="inicioIcon">dale click 5</a>
 			
 		</div>
 		<div class="page" ide="6">
-			<a href="#" class="inicioIcon">dale click 6</a>
 			
 		</div>
 		<div class="page" ide="7">
-			<a href="#" class="inicioIcon">dale click 7</a>
 			
 		</div>
 		<div class="page" ide="8">
-			<a href="#" class="inicioIcon">dale click 8</a>
 			
 		</div>
 	</div><!-- /pages -->
@@ -660,7 +653,7 @@
 	});
 
 	// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
-	function reveal(direction, ide, antIde) {
+	function reveal(direction, ide, antIde, descProg) {
 		var callbackTime = 750,
 			callbackFn = function() {
 				classie.remove(pages[currentPage], 'page--current');
@@ -669,7 +662,14 @@
 				classie.add(pages[ide], 'page--current');	
 			};
 
-		revealer.reveal(direction, callbackTime, callbackFn, ide, currentPage);
+		if(ide === '0'){
+			$("#cd-vertical-nav").css("visibility","hidden");
+			$("#id-side-menu").css("visibility","hidden");
+		}else{
+			$("#cd-vertical-nav").css("visibility","visible");
+			$("#id-side-menu").css("visibility","visible");
+		}
+		revealer.reveal(direction, callbackTime, callbackFn, ide, currentPage, descProg);
 	}
 
 	//Eventos de click de Navegador Lateral
@@ -886,59 +886,175 @@
 
 	var mapColums = new Object();
 	var mapValues = [];
+	var mapColores = new Object();
+	mapColores['1'] = "bg-paz";
+	mapColores['2'] = "bg-incluyente";
+	mapColores['3'] = "bg-educacion";
+	mapColores['4'] = "bg-prospero";
+	mapColores['5'] = "bg-global";
+	mapColores['6'] = "bg-democra";
+	mapColores['7'] = "bg-cercano";
+	mapColores['8'] = "bg-genero";
+	mapColores['0'] = "bg-inicio";
+	var mapBtnColores = new Object();
+	mapBtnColores['1'] = "btn-paz";
+	mapBtnColores['2'] = "btn-incluyente";
+	mapBtnColores['3'] = "btn-educacion";
+	mapBtnColores['4'] = "btn-prospero";
+	mapBtnColores['5'] = "btn-global";
+	mapBtnColores['6'] = "btn-democra";
+	mapBtnColores['7'] = "btn-cercano";
+	mapBtnColores['8'] = "btn-genero";
+	mapBtnColores['0'] = "btn-inicio";
+	var mapIcons = new Object();
+	mapIcons['1'] = "images/mex_paz_color.png";
+	mapIcons['2'] = "images/mex_inclu_color.png";
+	mapIcons['3'] = "images/mex_edu_color.png";
+	mapIcons['4'] = "images/mex_pros_color.png";
+	mapIcons['5'] = "images/mex_global_color.png";
+	mapIcons['6'] = "images/democra_color.png";
+	mapIcons['7'] = "images/cerca_moder_color.png";
+	mapIcons['8'] = "images/genero_color.png";
+	mapIcons['0'] = "btn-inicio";
+	var idProgDeriv = 0;
+	var idMetaNac = -1;
+	var data = "";
 
 	var table_prog = $('#programas_table').DataTable({
 		"columns": [
-            { "data": "TITLE1" },
-            { "data": "TITLE3" }
+            { "data": "DESC_ID_PROGRAMA_DERIVADO" },
+            { "data": "TIPO_PROGRAMA_DERIVADO" }
         ]
 
 	});
 
 	$.ajax({
-		url : 'files/file.txt',
+		//url : 'files/file.txt',
+		url : 'files/BD_PND.csv',
 		dataType : 'text',
 		async: true,
 		success : function load(d) {
-			var data = $.csv.toArrays(d);
-			console.log(data);
-			var html = generateTable(data);
+			data = $.csv.toArrays(d);
+			
+			generateTable(data);
 			/**************************
 			var html = generateTable(data);
       		$('#programas_table').empty();
       		$('#programas_table').html(html);
       		/**************************/
-
-
 		}
 	});
 
 
+    $('#programas_table tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }else {
+            table_prog.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+
+        idProgDeriv = $(this).attr('ide_prog_deriv');
+        var arrMetasFilt = [];
+        $.each(mapValues, function(i, v) {
+      		if(v.ID_PROGRAMA_DERIVADO === idProgDeriv){
+
+      			arrMetasFilt = String(v.ID_META_NACIONAL).split('#');
+      			var item = arrMetasFilt[Math.floor(Math.random()*arrMetasFilt.length)];
+      			if(item != 0){
+      				reveal('bottom', item, searchAntPage(), v.DESC_ID_PROGRAMA_DERIVADO);
+      			
+      				idMetaNac = item;
+      				$("div.page[ide="+idMetaNac+"]").append("<div class='header-wrap "+getColorsMeta(idMetaNac)+"'><h2>"+v.DESC_ID_PROGRAMA_DERIVADO+"</h2></div>");
+      			}
+      			return;
+      		}
+		});
+        
+		var stringDivObj = '<div class="container-obj"><h1 class="title">Objetivos</h1><div class="content">';
+		
+		var mapObjetivos = [];
+		var totalObjetivos = 0;
+		for(var row in data) {
+          	if(row > 0){
+          		if(data[row][getValueColumn("ID_PROGRAMA_DERIVADO")] == idProgDeriv){
+					var arrMetas = String(data[row][getValueColumn("ID_META_NACIONAL")]).split('#');
+					for(var x in arrMetas){
+						if(arrMetas[x] == idMetaNac){
+
+							var itemMap = {};
+			          		var exist = false;	
+			          		itemMap["ID_OBJETIVO"] = data[row][getValueColumn("ID_OBJETIVO")];
+			          		itemMap["DESC_OBJETIVO"] = data[row][getValueColumn("DESC_OBJETIVO")];
+
+			          		$.each(mapObjetivos, function(i, v) {
+				          		if(v.ID_OBJETIVO === itemMap["ID_OBJETIVO"]){
+				          			exist = true;
+				          			return;
+				          		}
+							});
+
+							if(!exist){
+								totalObjetivos++;
+				          		mapObjetivos.push(itemMap);
+				          	}
+						}
+					}
+          		}
+          	}
+        }
+
+        if(totalObjetivos < 4){
+    		stringDivObj+='<div class="grid">';
+    		$.each(mapObjetivos, function(i, v) {
+    			stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p><img src="images/mira.png" class="mira" /></figcaption></figure>';
+			});
+    		stringDivObj+='</div>';
+        }else{
+        	var cellByRow = totalObjetivos/2;
+        	if(totalObjetivos%2 != 0){
+        		cellByRow = Math.round(cellByRow);
+        	}
+    		stringDivObj+='<div class="grid">';
+    		$.each(mapObjetivos, function(i, v) {
+    			
+    			if(cellByRow == i){
+    				stringDivObj+='</div><div class="grid"><figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p><img src="images/mira.png" class="mira" /></figcaption></figure>';
+    			}else{
+    				stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p><img src="images/mira.png" class="mira" /></figcaption></figure>';
+    			}
+			});
+    		stringDivObj+='</div>';
+
+        }
+        stringDivObj+="</div>";
+
+
+        stringDivObj+='<div class="content-buttons"><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-search">Programa</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-search">Decreto</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Logros (LD)</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Datos abiertos</button></div>';
+
+        stringDivObj+='<div class="content-buttons"><button class="btn '+getColorsMeta(idMetaNac)+' btn-3e"><span>11</span> Instituciones Participantes</button><button class="btn '+getColorsMeta(idMetaNac)+' btn-1b">Descarga la <span>Guía Rápida</span> del Programa<img src="images/guia_ciu.png"></button></div>';
+
+        if(arrMetasFilt.length > 1){
+        	stringDivObj+='<h2 class="title">Este programa también está incluido en las siguientes metas...</h2><ul class = "metas-icons">';
+        	for(var i in arrMetasFilt){
+	        	if(arrMetasFilt[i] != idMetaNac && arrMetasFilt[i] != 0){
+	        		stringDivObj+='<li class="" index="'+arrMetasFilt[i]+'"><img src="'+getIcon(arrMetasFilt[i])+'"></li>';
+	        	}
+	        }
+			stringDivObj+='</ul>';	
+        }
+
+        /* cerrar container-obj*/
+        stringDivObj+="</div>";
+
+		$("div.page[ide="+idMetaNac+"]").append(stringDivObj);
+    });
 
 	function generateTable(data) {
-      var html = '';
 
       if(typeof(data[0]) === 'undefined') {
         return null;
       }
-
-      if(data[0].constructor === String) {
-        html += '<tr>\r\n';
-        for(var item in data) {
-          html += '<td>' + data[item] + '</td>\r\n';
-        }
-        html += '</tr>\r\n';
-      }
-
-      /*if(data[0].constructor === Array) {
-        for(var row in data) {
-          html += '<tr>\r\n';
-          for(var item in data[row]) {
-            html += '<td>' + data[row][item] + '</td>\r\n';
-          }
-          html += '</tr>\r\n';
-        }
-      }*/
 
       if(data[0].constructor === Array) {
         for(var item in data[0]) {
@@ -951,16 +1067,44 @@
         for(var row in data) {
           if(row > 0){
           	var itemMap = {};
-          	itemMap["TITLE1"] = data[row][getValueColumn("TITLE1")];
-          	itemMap["TITLE3"] = data[row][getValueColumn("TITLE3")];
-          	console.log(itemMap);
-          	//table_prog.row.add(itemMap).draw();
-          	table_prog.row.add( {
-        "TITLE1":       "Tiger Nixon",
-        "TITLE3":   "System Architect"
-    } ).draw();
+          	var exist = false;
+          	itemMap["ID_META_NACIONAL"] = data[row][getValueColumn("ID_META_NACIONAL")];
+          	itemMap["ID_PROGRAMA_DERIVADO"] = data[row][getValueColumn("ID_PROGRAMA_DERIVADO")];
+          	itemMap["DESC_ID_PROGRAMA_DERIVADO"] = data[row][getValueColumn("DESC_ID_PROGRAMA_DERIVADO")];
+          	itemMap["TIPO_PROGRAMA_DERIVADO"] = data[row][getValueColumn("TIPO_PROGRAMA_DERIVADO")];
+          	
+          	$.each(mapValues, function(i, v) {
+          		if(v.ID_PROGRAMA_DERIVADO === itemMap["ID_PROGRAMA_DERIVADO"]){
 
-			mapValues.push(itemMap);
+          			var idsMetasValues = String(v.ID_META_NACIONAL).split('#');
+          			var idsMetasBd = String(itemMap["ID_META_NACIONAL"]).split('#');
+
+          			$.each(idsMetasBd, function(k, valueBD) {
+          				exist = false;
+          				$.each(idsMetasValues, function(j, valueMap) {
+          					if(valueBD === valueMap){
+          						exist = true;
+          						return;
+          					}else{
+          						return;
+          					}
+          				});
+          				if(!exist){
+          					v.ID_META_NACIONAL+="#"+valueBD;
+          				}
+          			});
+
+          			exist = true;
+          			return;
+          		}
+			});
+
+          	if(!exist){
+          		var rowProg = table_prog.row.add(itemMap).draw();
+          		table_prog.rows(rowProg).nodes().to$().attr("ide_prog_deriv", itemMap["ID_PROGRAMA_DERIVADO"]);
+          		mapValues.push(itemMap);
+          	}
+			
           }
           
         }
@@ -968,21 +1112,22 @@
         //table_prog.rows.add(mapValues).draw();
       }
 
-      if(data[0].constructor === Object) {
-        for(var row in data) {
-          html += '<tr>\r\n';
-          for(var item in data[row]) {
-            html += '<td>' + item + ':' + data[row][item] + '</td>\r\n';
-          }
-          html += '</tr>\r\n';
-        }
-      }
-      
-      return html;
     }
 
     function getValueColumn(k) {
     	return mapColums[k];
+	}
+
+	function getColorsMeta(k) {
+    	return mapColores[k];
+	}
+
+	function getBtnColorsMeta(k) {
+    	return mapBtnColores[k];
+	}
+
+	function getIcon(k) {
+    	return mapIcons[k];
 	}
 
 })();

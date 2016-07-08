@@ -124,6 +124,7 @@
 }
 
 /*****************************************************/
+
 .bg-paz{
 	background: #24AF85;
 	color: #fff;
@@ -140,6 +141,69 @@
 
 .t-inicio{
 	color: #462B60;
+}
+
+.bg-incluyente{
+	background: #B297C7;
+	color: #fff;
+}
+
+.t-incluyente{
+	color: #B297C7;
+}
+
+.bg-educacion{
+	background: #6FBA69;
+	color: #fff;
+}
+
+.t-educacion{
+	color: #6FBA69;
+}
+
+.bg-prospero{
+	background: #EE7436;
+	color: #fff;
+}
+
+.t-prospero{
+	color: #EE7436;
+}
+
+.bg-global{
+	background: #118889;
+	color: #fff;
+}
+
+.t-global{
+	color: #118889;
+}
+
+.bg-democra{
+	background: #5BA199;
+	color: #fff;
+}
+
+.t-democra{
+	color: #5BA199;
+}
+
+.bg-cercano{
+	background: #BCCF02;
+	color: #fff;
+}
+
+.t-cercano{
+	color: #BCCF02;
+}
+
+.bg-genero{
+	background: #E84040;
+	color: #fff;
+}
+
+.t-genero{
+	color: #E84040;
 }
 
 /******************************************************/
@@ -430,8 +494,6 @@ h2.title {
 	border: none;
 	font-family: SoberanaSans_Light;
 	font-size: inherit;
-	color: inherit;
-	background: none;
 	cursor: pointer;
 	margin: 15px 1%;
 	text-transform: uppercase;
@@ -475,9 +537,11 @@ h2.title {
 }
 
 /*************************************/
+
 .btn-paz {
 	border: 3px solid #24AF85;
 	color: #24AF85;
+	background: #fff;
 }
 
 .btn-paz:hover {
@@ -485,7 +549,91 @@ h2.title {
 	color: #fff;
 }
 
-.btn-paz:before {
+.btn-incluyente {
+	border: 3px solid #B297C7;
+	color: #B297C7;
+	background: #fff;
+}
+
+.btn-incluyente:hover {
+	background: #B297C7;
+	color: #fff;
+}
+
+.btn-educacion {
+	border: 3px solid #6FBA69;
+	color: #6FBA69;
+	background: #fff;
+}
+
+.btn-educacion:hover {
+	background: #6FBA69;
+	color: #fff;
+}
+
+.btn-prospero {
+	border: 3px solid #EE7436;
+	color: #EE7436;
+	background: #fff;
+}
+
+.btn-prospero:hover {
+	background: #EE7436;
+	color: #fff;
+}
+
+.btn-global {
+	border: 3px solid #118889;
+	color: #118889;
+	background: #fff;
+}
+
+.btn-global:hover {
+	background: #118889;
+	color: #fff;
+}
+
+.btn-democra {
+	border: 3px solid #5BA199;
+	color: #5BA199;
+	background: #fff;
+}
+
+.btn-democra:hover {
+	background: #5BA199;
+	color: #fff;
+}
+
+.btn-cercano {
+	border: 3px solid #BCCF02;
+	color: #BCCF02;
+	background: #fff;
+}
+
+.btn-cercano:hover {
+	background: #BCCF02;
+	color: #fff;
+}
+
+.btn-genero {
+	border: 3px solid #E84040;
+	color: #E84040;
+	background: #fff;
+}
+
+.btn-genero:hover {
+	background: #E84040;
+	color: #fff;
+}
+
+.btn-paz:before,
+.btn-incluyente:before,
+.btn-educacion:before,
+.btn-prospero:before,
+.btn-global:before,
+.btn-democra:before,
+.btn-cercano:before,
+.btn-genero:before {
 	position: absolute;
 	height: 100%;
 	left: 0;
@@ -493,11 +641,6 @@ h2.title {
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
-}
-
-.btn-paz-1 {
-	background: #24AF85;
-	color: #fff;
 }
 
 /**************************************/

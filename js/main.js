@@ -125,7 +125,7 @@
 		var  strHTML = '';
 		for(var i = 0; i < this.options.nmbLayers; ++i) {
 			var bgcolor = typeof this.options.bgcolor === 'string' ? this.options.bgcolor : (this.options.bgcolor instanceof Array && this.options.bgcolor[i] ? this.options.bgcolor[i] : '#fff');
-			strHTML += '<div ide="'+ i +'" style="background:' + bgcolor + '" class="revealer__layer"><img src="'+this.options.bgImages[i]+'" class="img-responsive"/><div class="quote"><p>'+this.options.bgTitles[i]+'</p><h3>Programa Sectorial de Gobernación</h3></div></div>,';
+			strHTML += '<div ide="'+ i +'" style="background:' + bgcolor + '" class="revealer__layer"><img src="'+this.options.bgImages[i]+'" class="img-responsive"/><div class="quote"><p>'+this.options.bgTitles[i]+'</p><h3></h3></div></div>,';
 		}
 		this.revealerWrapper.innerHTML = strHTML;
 		bodyEl.appendChild(this.revealerWrapper);
@@ -135,7 +135,7 @@
 	 * reveal the layers
 	 * direction: right || left || top || bottom || cornertopleft || cornertopright || cornerbottomleft || cornerbottomright
 	 */
-	Revealer.prototype.reveal = function(direction, callbacktime, callback, currentPage, prevPage) {
+	Revealer.prototype.reveal = function(direction, callbacktime, callback, currentPage, prevPage, descProg) {
 		// if animating return
 		if( this.isAnimating ) {
 			return false;
@@ -146,10 +146,15 @@
 		// onStart callback
 		this.options.onStart(this.direction);
 
+		if(descProg == undefined){
+			descProg = "";
+		}
+		
 		$( ".revealer__layer" ).each( function( index, element ){
     		if( element.getAttribute("ide") == currentPage){
     			$(element).css('z-index', '2147483647');
     			$(element).css('visibility', 'visible');
+    			$(element).find('h3').text(''+descProg+'');
     		}
     		if(element.getAttribute("ide") == prevPage){
     			$(element).css('z-index', '0');
