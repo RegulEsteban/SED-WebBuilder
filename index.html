@@ -78,7 +78,7 @@
 					<article>
 						<h1 class="anim3 projectTitle">Metas para un...</h1>
 						<a href="#" id="pazIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="1">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -93,8 +93,8 @@
 							</div>
 						</a>
 					
-						<a href="#0" id="incluyenteIcon">
-							<div class="mix user-interface interactive item">
+						<a href="#" id="incluyenteIcon">
+							<div class="mix user-interface interactive item" ideMetaIcon="2">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -110,7 +110,7 @@
 						</a>
 						
 						<a href="#0" id="educacionIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="3">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -126,7 +126,7 @@
 						</a>
 						
 						<a href="#0" id="prosperoIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="4">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -142,7 +142,7 @@
 						</a>
 						
 						<a href="#0" id="globalIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="5">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -163,7 +163,7 @@
 					<article>
 						<h1 class="anim3 projectTitleInverse">Programas transversales...</h1>
 						<a href="#0" id="productividadIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="6">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -178,7 +178,7 @@
 							</div>
 						</a>
 						<a href="#0" id="cercanoIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="7">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -193,7 +193,7 @@
 							</div>
 						</a>
 						<a href="#0" id="generoIcon">
-							<div class="mix user-interface interactive item">
+							<div class="mix user-interface interactive item" ideMetaIcon="8">
 								<div class="workSquare">
 									<div class="workContent">
 										<div class="workTable">
@@ -604,53 +604,99 @@
 		return false;
 	});
 	$("#pazIcon").click(function(){
-		reveal('bottom', '1', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+
+		/*$.fn.dataTableExt.afnFiltering.push(
+		   	function( oSettings, aData, iDataIndex ) {
+		   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
+		   		for(var l in arrMetasFilter){
+		   			if(arrMetasFilter[l] == '1'){
+		   				return false;
+		   			}
+		   		}
+
+            	return true;
+	        }
+		);*/
+		addFilterTable('1');
+		console.log(addFilter($(this),'normal'));
 		return false;
 	});
 	$("#incluyenteIcon").click(function(){
-		reveal('bottom', '2', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'normal');
 		return false;
 	});
 	$("#educacionIcon").click(function(){
-		reveal('bottom', '3', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'normal');
 		return false;
 	});
 	$("#prosperoIcon").click(function(){
-		reveal('bottom', '4', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'normal');
 		return false;
 	});
 	$("#globalIcon").click(function(){
-		reveal('bottom', '5', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'normal');
 		return false;
 	});
 	$("#productividadIcon").click(function(){
-		reveal('bottom', '6', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'inverse');
 		return false;
 	});
 	$("#cercanoIcon").click(function(){
-		reveal('bottom', '7', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'inverse');
 		return false;
 	});
 	$("#generoIcon").click(function(){
-		reveal('bottom', '8', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","visible");
-		$("#id-side-menu").css("visibility","visible");
+		addFilter($(this),'inverse');
 		return false;
 	});
+
+	function addFilterTable(meta_selected){
+
+		$("div.item_active").each(function(index, el) {
+			console.log(el.getAttribute('ideMetaIcon'));
+		});
+
+		$.fn.dataTableExt.afnFiltering.push(
+		   	function( oSettings, aData, iDataIndex ) {
+		   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
+		   		for(var l in arrMetasFilter){
+		   			if(arrMetasFilter[l] == meta_selected){
+		   				return false;
+		   			}
+		   		}
+
+            	return true;
+	        }
+		);
+	}
+
+	function addFilter(ee, type){
+		var useFilter = false;
+		if(type == 'normal'){
+			if(ee.find('div.item').hasClass('item')){
+				ee.find('div.item').addClass('item_active');
+				ee.find('div.item').removeClass('item');
+				useFilter = true;
+			}else if(ee.find('div.item_active').hasClass('item_active')){
+				ee.find('div.item_active').addClass('item');
+				ee.find('div.item_active').removeClass('item_active');
+				useFilter = false;
+			}
+		}else if(type == 'inverse'){
+			if(ee.find('div.item').hasClass('item')){
+				ee.find('div.item').addClass('item_active_inverse');
+				ee.find('div.item').removeClass('item');
+				useFilter = true;
+			}else if(ee.find('div.item_active_inverse').hasClass('item_active_inverse')){
+				ee.find('div.item_active_inverse').addClass('item');
+				ee.find('div.item_active_inverse').removeClass('item_active_inverse');
+				useFilter = false;
+			}
+		}
+
+		table_prog.draw();
+		return useFilter;
+	}
 
 	// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
 	function reveal(direction, ide, antIde, descProg) {

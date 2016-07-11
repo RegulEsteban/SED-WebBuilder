@@ -83,18 +83,22 @@
     display: none
 }
 
-.right-half div.item {
+.right-half div.item,
+.right-half div.item_active_inverse{
     vertical-align: top;
 	padding-top: 20px;
     width: 31%
 }
 
-.left-half div.item {
+.left-half div.item,
+.left-half div.item_active {
     vertical-align: top;
     width: 20%
 }
 
-.item {
+.item,
+.item_active,
+.item_active_inverse {
     display: block;
     float: left;
     position: relative;
@@ -242,14 +246,8 @@
     transform: translateY(28%)
 }
 
-.item:hover .bera-second-inner {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transform: translateY(16%);
-    transform: translateY(16%)
-}
-
-.item:hover .buzo-second-innner {
+.item_active .secondInnerIcon,
+.item_active_inverse .secondInnerIcon {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-transform: translateY(28%);
@@ -263,7 +261,21 @@
     transform: translateY(150%)
 }
 
+.item_active .innerIcons,
+.item_active_inverse .innerIcons {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translateY(150%);
+    transform: translateY(150%)
+}
+
 .item:hover .caption {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.item_active .caption,
+.item_active_inverse .caption {
     -webkit-transform: translateX(0);
     transform: translateX(0)
 }
@@ -320,9 +332,23 @@
     border-color: #fff;
 }
 
+#pazIcon .item_active .workSquare,
+#incluyenteIcon .item_active .workSquare,
+#educacionIcon .item_active .workSquare,
+#prosperoIcon .item_active .workSquare,
+#globalIcon .item_active .workSquare{
+    border-color: #fff;
+}
+
 #productividadIcon .item:hover .workSquare,
 #cercanoIcon .item:hover .workSquare,
 #generoIcon .item:hover .workSquare{
+    border-color: #462B60;
+}
+
+#productividadIcon .item_active_inverse .workSquare,
+#cercanoIcon .item_active_inverse .workSquare,
+#generoIcon .item_active_inverse .workSquare{
     border-color: #462B60;
 }
 
