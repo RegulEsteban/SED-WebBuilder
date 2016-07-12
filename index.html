@@ -292,8 +292,8 @@
 				</div>
 
 				<div class="content-buttons">
-					<button class="btn btn-paz btn-3a icon-search">Programa</button>
-					<button class="btn btn-paz btn-3a icon-search">Decreto</button>
+					<button class="btn btn-paz btn-3a icon-cloud-download">Programa</button>
+					<button class="btn btn-paz btn-3a icon-cloud-download">Decreto</button>
 					<button class="btn btn-paz btn-3b icon-cloud-download">Logros (LD)</button>
 					<button class="btn btn-paz btn-3b icon-cloud-download">Datos abiertos</button>
 				</div>
@@ -604,21 +604,7 @@
 		return false;
 	});
 	$("#pazIcon").click(function(){
-
-		/*$.fn.dataTableExt.afnFiltering.push(
-		   	function( oSettings, aData, iDataIndex ) {
-		   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
-		   		for(var l in arrMetasFilter){
-		   			if(arrMetasFilter[l] == '1'){
-		   				return false;
-		   			}
-		   		}
-
-            	return true;
-	        }
-		);*/
 		addFilterTable('1');
-		//console.log(addFilter($(this),'normal'));
 		return false;
 	});
 	$("#incluyenteIcon").click(function(){
@@ -651,36 +637,40 @@
 	});
 
 	function addFilterTable(meta_selected){
-		var mapItems = [];
-		$("div.mix").each(function(index, el) {
-			var item = {};
-			item["ideMetaIcon"] = el.getAttribute('ideMetaIcon');
-			
-		});
+		$.fn.dataTableExt.afnFiltering.length = 0;
+    	table_prog.draw();
 
-
-
-
-
-
-
-		var activeAll = false;
+		var initial = false;
+		var desactiveAll = true;
+		var sinFiltro = false;
 		$("div.mix").each(function(index, el) {
 			var ideMetaIcon = el.getAttribute('ideMetaIcon');
-			if(ideMetaIcon != undefined){
-
-				if(ideMetaIcon == meta_selected){
-					if($(el).hasClass('item')){
-						activeAll = true;
-					}
-					if(parseInt(ideMetaIcon) < 6){
-						$(el).addClass('item');
-						$(el).removeClass('item_active');
-					}else if(parseInt(ideMetaIcon) > 5){
-						$(el).addClass('item');
-						$(el).removeClass('item_active_inverse');
-					}
+			if(ideMetaIcon != undefined && meta_selected != ideMetaIcon){
+				if($(el).hasClass('item')){
+					initial = true;
 				}else{
+					initial = false;
+					return false;
+				}
+			}
+		});
+
+		$("div.mix").each(function(index, el) {
+			var ideMetaIcon = el.getAttribute('ideMetaIcon');
+			if(ideMetaIcon != undefined && meta_selected != ideMetaIcon){
+				if($(el).hasClass('item')){
+					desactiveAll = false;
+				}else{
+					desactiveAll = true;
+					return false;
+				}
+			}
+		});
+
+		if(initial && $("div.mix[ideMetaIcon="+meta_selected+"]").hasClass('item')){
+			$("div.mix").each(function(index, el) {
+				var ideMetaIcon = el.getAttribute('ideMetaIcon');
+				if(ideMetaIcon != undefined && meta_selected != ideMetaIcon){
 					if(parseInt(ideMetaIcon) < 6){
 						$(el).addClass('item_active');
 						$(el).removeClass('item');
@@ -689,23 +679,11 @@
 						$(el).removeClass('item');
 					}
 				}
-			}
-		});
-		
-		var indexActive = 0;
-		$("div.mix").each(function(index, el) {
-			var ideMetaIcon = el.getAttribute('ideMetaIcon');
-			if(ideMetaIcon != undefined){
-				if(!$(el).hasClass('item')){
-					indexActive++;
-				}
-			}
-		});
-		console.log(indexActive);
-		if(activeAll && indexActive == 7){
+			});
+		}else if(desactiveAll && $("div.mix[ideMetaIcon="+meta_selected+"]").hasClass('item')){
 			$("div.mix").each(function(index, el) {
 				var ideMetaIcon = el.getAttribute('ideMetaIcon');
-				if(ideMetaIcon != undefined){
+				if(ideMetaIcon != undefined && meta_selected != ideMetaIcon){
 					if(parseInt(ideMetaIcon) < 6){
 						$(el).addClass('item');
 						$(el).removeClass('item_active');
@@ -715,49 +693,48 @@
 					}
 				}
 			});
+			sinFiltro = true;
+		}else if(desactiveAll && !$("div.mix[ideMetaIcon="+meta_selected+"]").hasClass('item')){
+			$("div.mix").each(function(index, el) {
+				var ideMetaIcon = el.getAttribute('ideMetaIcon');
+				if(ideMetaIcon != undefined){
+					if($(el).hasClass('item') && meta_selected != ideMetaIcon){
+						if(parseInt(ideMetaIcon) < 6){
+							$(el).addClass('item_active');
+							$(el).removeClass('item');
+						}else if(parseInt(ideMetaIcon) > 5){
+							$(el).addClass('item_active_inverse');
+							$(el).removeClass('item');
+						}
+					}else if(!$(el).hasClass('item') && meta_selected == ideMetaIcon){
+						if(parseInt(ideMetaIcon) < 6){
+							$(el).addClass('item');
+							$(el).removeClass('item_active');
+						}else if(parseInt(ideMetaIcon) > 5){
+							$(el).addClass('item');
+							$(el).removeClass('item_active_inverse');
+						}
+					}
+				}
+			});
 		}
 		
+		if(!sinFiltro){
+			$.fn.dataTableExt.afnFiltering.push(
+			   	function( oSettings, aData, iDataIndex ) {
+			   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
+			   		for(var l in arrMetasFilter){
+			   			if(arrMetasFilter[l] == meta_selected){
+			   				return true;
+			   			}
+			   		}
 
-		/*$.fn.dataTableExt.afnFiltering.push(
-		   	function( oSettings, aData, iDataIndex ) {
-		   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
-		   		for(var l in arrMetasFilter){
-		   			if(arrMetasFilter[l] == meta_selected){
-		   				return false;
-		   			}
-		   		}
+	            	return false;
+		        }
+			);
 
-            	return true;
-	        }
-		);*/
-	}
-
-	function addFilter(ee, type){
-		var useFilter = false;
-		if(type == 'normal'){
-			if(ee.find('div.item').hasClass('item')){
-				ee.find('div.item').addClass('item_active');
-				ee.find('div.item').removeClass('item');
-				useFilter = true;
-			}else if(ee.find('div.item_active').hasClass('item_active')){
-				ee.find('div.item_active').addClass('item');
-				ee.find('div.item_active').removeClass('item_active');
-				useFilter = false;
-			}
-		}else if(type == 'inverse'){
-			if(ee.find('div.item').hasClass('item')){
-				ee.find('div.item').addClass('item_active_inverse');
-				ee.find('div.item').removeClass('item');
-				useFilter = true;
-			}else if(ee.find('div.item_active_inverse').hasClass('item_active_inverse')){
-				ee.find('div.item_active_inverse').addClass('item');
-				ee.find('div.item_active_inverse').removeClass('item_active_inverse');
-				useFilter = false;
-			}
+			table_prog.draw();
 		}
-
-		table_prog.draw();
-		return useFilter;
 	}
 
 	// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
@@ -1138,7 +1115,7 @@
         stringDivObj+="</div>";
 
 
-        stringDivObj+='<div class="content-buttons"><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-search">Programa</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-search">Decreto</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Logros (LD)</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Datos abiertos</button></div>';
+        stringDivObj+='<div class="content-buttons"><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Programa</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Decreto</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Logros (LD)</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Datos abiertos</button></div>';
 
         stringDivObj+='<div class="content-buttons"><button class="btn '+getColorsMeta(idMetaNac)+' btn-3e"><span>11</span> Instituciones Participantes</button><button class="btn '+getColorsMeta(idMetaNac)+' btn-1b">Descarga la <span>Guía Rápida</span> del Programa<img src="images/guia_ciu.png"></button></div>';
 
