@@ -822,3 +822,9 @@ h2.title {
 		padding-bottom: 5px;
 	}
 }
+
+@media screen and (max-width: 480px){
+	h1.title{
+		padding-top: 40px;
+		font-size: 30px;
+	}

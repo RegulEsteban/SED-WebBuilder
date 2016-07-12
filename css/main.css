@@ -28,6 +28,7 @@
 .siteLoader,
 .head-button,
 .head-button2,
+.head-button3,
 .objective3,
 .objective2,
 #mainContainer,
@@ -222,6 +223,15 @@ h1.projectTitleInverse {
     width: 100%;
     left: 0;
     top: 0;
+}
+
+.head-button3{
+	position: absolute;
+	min-height: 50px;
+    margin: auto;
+    width: 100%;
+    left: 0;
+    top: 40px;
 }
 
 .objective3{

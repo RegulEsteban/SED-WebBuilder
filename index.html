@@ -315,12 +315,6 @@
 	};
 
 	// clicking the page nav buttons
-	$(".inicioIcon").click(function(){
-		reveal('bottom', '0', searchAntPage());
-		$("#cd-vertical-nav").css("visibility","hidden");
-		$("#id-side-menu").css("visibility","hidden");
-		return false;
-	});
 	$("#pazIcon").click(function(){
 		addFilterTable('1');
 		return false;
@@ -464,14 +458,6 @@
 				currentPage = ide;
 				classie.add(pages[ide], 'page--current');	
 			};
-
-		if(ide === '0'){
-			$("#cd-vertical-nav").css("visibility","hidden");
-			$("#id-side-menu").css("visibility","hidden");
-		}else{
-			$("#cd-vertical-nav").css("visibility","visible");
-			$("#id-side-menu").css("visibility","visible");
-		}
 		revealer.reveal(direction, callbackTime, callbackFn, ide, currentPage, descProg);
 	}
 
@@ -599,7 +585,7 @@
       		}
 		});
         
-		var stringDivObj = '<div class="container-obj"><h1 class="title">Objetivos</h1><div class="content">';
+		var stringDivObj = '<div class="container-obj"><h1 class="title">Objetivos</h1><div class="head-button3"><a id="btn-return" class="viewWork2">Regresar a Menú</a></div><div class="content">';
 		
 		var mapObjetivos = [];
 		var totalObjetivos = 0;
@@ -682,6 +668,19 @@
       			$("div.page[ide="+idMetaNac+"]").append("<div class='hero "+getColorsMeta(idMetaNac)+"'><h2>"+v.DESC_ID_PROGRAMA_DERIVADO+"</h2></div>");
       			return false;
       		}
+		});
+
+		$("#btn-return").click(function(){
+			reveal('bottom', '0', searchAntPage());
+			$('.footer-wrap').remove();
+			$('.hero').remove();
+			$('.container-obj').remove();
+			$('.header-wrap').remove();
+			$('.kontext').remove();
+	        $('.footer-wrap').remove();
+	        $('.bullets').remove();
+	        $('.final').remove();
+			return false;
 		});
 
 		$("figure.effect-chico").click(function(e) { 
