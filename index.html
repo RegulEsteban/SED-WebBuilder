@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/loader.css" />
 	<link rel="stylesheet" type="text/css" href="css/navi-vertical.css">
 	<link rel="stylesheet" type="text/css" href="css/navi-side-menu-style.css" media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/datatable-custom.css" />
 
 	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
@@ -618,45 +618,107 @@
 	        }
 		);*/
 		addFilterTable('1');
-		console.log(addFilter($(this),'normal'));
+		//console.log(addFilter($(this),'normal'));
 		return false;
 	});
 	$("#incluyenteIcon").click(function(){
-		addFilter($(this),'normal');
+		addFilterTable('2');
 		return false;
 	});
 	$("#educacionIcon").click(function(){
-		addFilter($(this),'normal');
+		addFilterTable('3');
 		return false;
 	});
 	$("#prosperoIcon").click(function(){
-		addFilter($(this),'normal');
+		addFilterTable('4');
 		return false;
 	});
 	$("#globalIcon").click(function(){
-		addFilter($(this),'normal');
+		addFilterTable('5');
 		return false;
 	});
 	$("#productividadIcon").click(function(){
-		addFilter($(this),'inverse');
+		addFilterTable('6');
 		return false;
 	});
 	$("#cercanoIcon").click(function(){
-		addFilter($(this),'inverse');
+		addFilterTable('7');
 		return false;
 	});
 	$("#generoIcon").click(function(){
-		addFilter($(this),'inverse');
+		addFilterTable('8');
 		return false;
 	});
 
 	function addFilterTable(meta_selected){
-
-		$("div.item_active").each(function(index, el) {
-			console.log(el.getAttribute('ideMetaIcon'));
+		var mapItems = [];
+		$("div.mix").each(function(index, el) {
+			var item = {};
+			item["ideMetaIcon"] = el.getAttribute('ideMetaIcon');
+			
 		});
 
-		$.fn.dataTableExt.afnFiltering.push(
+
+
+
+
+
+
+		var activeAll = false;
+		$("div.mix").each(function(index, el) {
+			var ideMetaIcon = el.getAttribute('ideMetaIcon');
+			if(ideMetaIcon != undefined){
+
+				if(ideMetaIcon == meta_selected){
+					if($(el).hasClass('item')){
+						activeAll = true;
+					}
+					if(parseInt(ideMetaIcon) < 6){
+						$(el).addClass('item');
+						$(el).removeClass('item_active');
+					}else if(parseInt(ideMetaIcon) > 5){
+						$(el).addClass('item');
+						$(el).removeClass('item_active_inverse');
+					}
+				}else{
+					if(parseInt(ideMetaIcon) < 6){
+						$(el).addClass('item_active');
+						$(el).removeClass('item');
+					}else if(parseInt(ideMetaIcon) > 5){
+						$(el).addClass('item_active_inverse');
+						$(el).removeClass('item');
+					}
+				}
+			}
+		});
+		
+		var indexActive = 0;
+		$("div.mix").each(function(index, el) {
+			var ideMetaIcon = el.getAttribute('ideMetaIcon');
+			if(ideMetaIcon != undefined){
+				if(!$(el).hasClass('item')){
+					indexActive++;
+				}
+			}
+		});
+		console.log(indexActive);
+		if(activeAll && indexActive == 7){
+			$("div.mix").each(function(index, el) {
+				var ideMetaIcon = el.getAttribute('ideMetaIcon');
+				if(ideMetaIcon != undefined){
+					if(parseInt(ideMetaIcon) < 6){
+						$(el).addClass('item');
+						$(el).removeClass('item_active');
+					}else if(parseInt(ideMetaIcon) > 5){
+						$(el).addClass('item');
+						$(el).removeClass('item_active_inverse');
+					}
+				}
+			});
+		}
+		
+
+		/*$.fn.dataTableExt.afnFiltering.push(
 		   	function( oSettings, aData, iDataIndex ) {
 		   		var arrMetasFilter = String(table_prog.row(iDataIndex).data().ID_META_NACIONAL).split('#');
 		   		for(var l in arrMetasFilter){
@@ -667,7 +729,7 @@
 
             	return true;
 	        }
-		);
+		);*/
 	}
 
 	function addFilter(ee, type){
