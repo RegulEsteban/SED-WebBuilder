@@ -1,20 +1,93 @@
+@font-face {
+    font-family: 'Soberana_Bold';
+    src: url('fonts/soberana/SoberanaSans-Bold.eot');
+    src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+        url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+        url('fonts/soberana/fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+        url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SoberanaSans-Light';
+    src: url('fonts/soberana/SoberanaSans-Light.eot');
+    src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+        url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+        url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+        url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}   
+
+.btn-table{
+    border: none;
+    font-family: SoberanaSans_Light;
+    font-size: inherit;
+    cursor: pointer;
+    margin: 15px 1%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-clean-table{
+    color: #fff;
+    background-color: #1D915A;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.btn-table:before{
+    font-family: FontAwesome;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
 table.dataTable {
     width: 100%;
+    padding-left: 0px;
     margin: 0 auto;
     clear: both;
     border-collapse: separate;
     border-spacing: 0
 }
 
-table.dataTable thead th,
-table.dataTable tfoot th {
-    font-weight: bold
+table.dataTable thead th.programas,
+table.dataTable tfoot th.programas {
+    width: 60%;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #BCCF00;
+    text-align: left;
+}
+
+table.dataTable thead th.tipo,
+table.dataTable tfoot th.tipo {
+    width: 40%;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #6FBA69;
+    text-align: left;
 }
 
 table.dataTable thead th,
 table.dataTable thead td {
     padding: 10px 18px;
-    border-bottom: 1px solid #111
 }
 
 table.dataTable thead th:active,
@@ -25,7 +98,6 @@ table.dataTable thead td:active {
 table.dataTable tfoot th,
 table.dataTable tfoot td {
     padding: 10px 18px 6px 18px;
-    border-top: 1px solid #111
 }
 
 table.dataTable thead .sorting,
@@ -41,7 +113,7 @@ table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
 table.dataTable thead .sorting_desc_disabled {
     background-repeat: no-repeat;
-    background-position: center right
+    background-position: center right;
 }
 
 table.dataTable thead .sorting {
@@ -65,11 +137,12 @@ table.dataTable thead .sorting_desc_disabled {
 }
 
 table.dataTable tbody tr {
-    background-color: #ffffff
+    background-color: #ffffff;
+    font-family: SoberanaSans-Light;
 }
 
 table.dataTable tbody tr.selected {
-    background-color: #B0BED9
+    background-color: #b297c7
 }
 
 table.dataTable tbody th,
@@ -114,7 +187,7 @@ table.dataTable.display tbody tr.odd {
 
 table.dataTable.stripe tbody tr.odd.selected,
 table.dataTable.display tbody tr.odd.selected {
-    background-color: #acbad4
+    background-color: #b297c7
 }
 
 table.dataTable.hover tbody tr:hover,
@@ -236,7 +309,7 @@ table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_3 {
 }
 
 table.dataTable.no-footer {
-    border-bottom: 1px solid #111
+    border-bottom: 1px solid #ddd
 }
 
 table.dataTable.nowrap th,
@@ -352,6 +425,12 @@ table.dataTable td {
     box-sizing: content-box
 }
 
+thead input {
+        width: 85%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
 .dataTables_wrapper {
     position: relative;
     clear: both;
@@ -360,22 +439,29 @@ table.dataTable td {
 }
 
 .dataTables_wrapper .dataTables_length {
-    float: left
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    float: left;
+
 }
 
 .dataTables_wrapper .dataTables_filter {
+    display: none;
     float: right;
     text-align: right
 }
 
 .dataTables_wrapper .dataTables_filter input {
+    display: none;
     margin-left: 0.5em
 }
 
 .dataTables_wrapper .dataTables_info {
     clear: both;
     float: left;
-    padding-top: 0.755em
+    padding-top: 0.755em;
+    padding-left: 2%;
 }
 
 .dataTables_wrapper .dataTables_paginate {
