@@ -208,6 +208,10 @@
 
 /******************************************************/
 .container-obj{ 
+    margin-top: 50px;
+}
+
+.container-ind{ 
     margin-top: 100px;
 }
 
@@ -333,6 +337,7 @@ h2.title {
   font-size: 18px;
   height:150px;
   width: 90%;
+  margin: auto;
 }
 
 .scroll-list ul{
@@ -453,14 +458,15 @@ h2.title {
 
 /********* select **********/
 .selectdiv {
-  
   margin-bottom: 0px;
   width: 90%;
   text-align: center;
-  border: solid;
-  border-color: #462B60;
-  margin: 10px;
-  padding: 15px auto;
+  border: 2px solid #462B60;
+  margin: auto;
+  margin-top: 10px;
+  padding: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .selectdiv h2{
@@ -472,13 +478,6 @@ h2.title {
 .selectdiv h2 span{
   	font-family: SoberanaSans_Bold;
   	font-size: 26px;
-}
-
-.selectdiv-row {	
-  flex-direction: row;
-  flex: 1 100%;
-  justify-content: center;
-  height: 120px;
 }
 
 
@@ -762,10 +761,7 @@ h2.title {
 	}
 
 	.selectdiv{
-		margin: 60px auto;
-	}
-	.selectdiv select{
-		font-size: 18px;
+		margin-top: 10px;
 	}
 }
 
@@ -777,6 +773,39 @@ h2.title {
 	.container-divs{
 		display: inline-block;
 	}
+
+	.footer-wrap{
+		height: 100px;
+	}
+
+	.footer-wrap h2{
+		font-size: 18px;
+	}
+
+	.footer-wrap h2 span{
+		font-size: 20px;
+	}
+
+	.scroll-list{
+		width: 100%;
+	}
+
+	.selectdiv h2{
+		font-size: 18px;	
+	}
+
+	.selectdiv h2 span{
+		font-size: 20px;
+	}
+
+	.question h2{
+		font-size: 18px;
+	}
+
+	.question p{
+		font-size: 16px;
+	}
+
 }
 
 @media screen and (max-width: 800px){
@@ -788,19 +817,8 @@ h2.title {
 }
 
 @media screen and (max-width: 421px){
-	.footer-wrap h2{
-		font-size: 20px;
-	}
-
-	.footer-wrap h2 span{
-		font-size: 22px;
-	}
-
-	.footer-wrap{
-		height: 120px;
-	}
-
 	.selectdiv{
-		margin: 70px auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 }
