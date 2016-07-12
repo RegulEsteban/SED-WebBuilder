@@ -453,16 +453,25 @@ h2.title {
 
 /********* select **********/
 .selectdiv {
-  position: absolute;
+  
   margin-bottom: 0px;
   width: 90%;
   text-align: center;
   border: solid;
   border-color: #462B60;
   margin: 10px;
-  padding: 35px 45px;
-  font-family: SoberanaSans-Light;
-  font-size: 22px;
+  padding: 15px auto;
+}
+
+.selectdiv h2{
+	color: #462B60;
+  	font-family: SoberanaSans-Light;
+  	font-size: 22px;
+}
+
+.selectdiv h2 span{
+  	font-family: SoberanaSans_Bold;
+  	font-size: 26px;
 }
 
 .selectdiv-row {	
@@ -470,22 +479,6 @@ h2.title {
   flex: 1 100%;
   justify-content: center;
   height: 120px;
-}
-
-.selectdiv:after {
-  content: '+';
-  font: 27px "SoberanaSans_Bold", monospace;
-  color: #333;
-  font-weight: 500;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 11px;
-  top: 27px;
-  padding: 0 0 2px;
-  position: absolute;
-  pointer-events: none;
 }
 
 
@@ -528,12 +521,18 @@ h2.title {
 	-webkit-font-smoothing: antialiased;
 }
 
+/****************** iconos *******************/
+
 .icon-cloud-download:before {
   content: "\f0ed";
 }
 
 .icon-search:before {
   content: "\f002";
+}
+
+.icon-refresh:before{
+	content:"\f021";
 }
 
 /*************************************/
