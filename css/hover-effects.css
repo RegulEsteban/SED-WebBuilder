@@ -37,8 +37,6 @@
    flex-wrap: nowrap;
    /* tweak the where items line up on the row */
    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-   -webkit-align-content: stretch;
-   align-content: stretch;
    	max-width: 100%;
 }
 
@@ -1138,11 +1136,9 @@ figure.effect-chico figcaption::before{
 }
 
 figure.effect-chico img {
-	opacity: 0.1;
+	opacity: 0.6;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: scale(1.12);
-	transform: scale(1.12);
 }
 
 figure.effect-chico:hover img {
@@ -1176,10 +1172,12 @@ figure.effect-chico p {
 
 figure.effect-chico h2 {
 	padding: 15px 0 15px 0;
+	display: none;
 }
 
 figure.effect-chico p {
-	margin: 0 auto;
+	margin: auto;
+	margin-top: 10%;
 	max-width: 200px;
 	font-size: 0.5em;
 	-webkit-transform: scale(1.5);
@@ -1217,6 +1215,7 @@ figure.effect-chico:hover img.mira{
 	}
 
 	figure.effect-chico p{
+		margin-top: 0;
 		opacity: 1.0;
 		font-size: 0.4em;
 		max-width: 90%;
@@ -1228,6 +1227,10 @@ figure.effect-chico:hover img.mira{
 
 	figure.effect-chico img{
 		opacity: 0;
+	}
+
+	figure.effect-chico h2{
+		display: inline-block;	
 	}
 }
 
@@ -1247,8 +1250,8 @@ figure.effect-chico:hover img.mira{
 	}
 
 	figure.effect-chico h2{
-		padding: 5px 0 5px 0;
-		font-size: 22px;	
+		padding: 5px 0 0px 0;
+		font-size: 18px;
 	}
 }
 

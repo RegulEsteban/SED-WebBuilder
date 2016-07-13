@@ -24,25 +24,25 @@ $(document).ready(function () {
 	var Model = {isLoaded: false,
 			items: [
 			// project header images
-			"images/Botones/democra_mor.png",		//11
-			"images/Botones/democra_color.png",		//12
-			"images/Botones/democra_blan.png",		//13
-			"images/Botones/cerca_moder_mor.png",	//14
-			"images/Botones/cerca_moder_color.png",	//15
-			"images/Botones/cerca_moder_blan.png",	//16
-			"images/Botones/genero_mor.png",		//17
-			"images/Botones/genero_color.png",		//18
-			"images/Botones/genero_blan.png",		//19
-			"images/Botones/mex_paz_blan.png",		//1
-			"images/Botones/mex_paz_color.png",		//2
-			"images/Botones/mex_inclu_blan.png",	//3
-			"images/Botones/mex_inclu_color.png",	//4
-			"images/Botones/mex_edu_blan.png",		//5
-			"images/Botones/mex_edu_color.png",		//6
-			"images/Botones/mex_pros_blan.png",		//7
-			"images/Botones/mex_pros_color.png",	//8
-			"images/Botones/mex_global_blan.png",	//9
-			"images/Botones/mex_global_color.png"	//10
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_mor.png",		//11
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_color.png",		//12
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_blan.png",		//13
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_mor.png",	//14
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_color.png",	//15
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_blan.png",	//16
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_mor.png",		//17
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_color.png",		//18
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_blan.png",		//19
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png",		//1
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png",		//2
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png",	//3
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png",	//4
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png",		//5
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png",		//6
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png",		//7
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png",	//8
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png",	//9
+			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png"	//10
 
 			]};
 
@@ -122,11 +122,11 @@ $(document).ready(function () {
 	CreateElement();
 
 	var companyName = [
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>"
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>"
 	]
 	var companyBuildUp="";
 	var showLetter="";

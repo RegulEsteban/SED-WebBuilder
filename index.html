@@ -2,7 +2,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>:: Plan Nacional de Desarrollo ::</title>
-	
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
@@ -51,7 +52,7 @@
 	<div class="pages">
 		<div class="page page--current" ide="0"><!-- intro page -->
 			<div id="mainContainer" style="visibility:hidden">
-				<section class="container">
+				<section class="container-pnd">
 					<div class="head-button2">
 						<a href="#" class="viewWork">Regresar a Programas</a>
 					</div>
@@ -72,7 +73,7 @@
 			        <p class="anim5 projectAbout" style="color:#615c71">2013 - 2018</p>
 			    </div>
 					
-				<section class="container">
+				<section class="container-pnd">
 				  <div class="left-half">
 					<article>
 						<h1 class="anim3 projectTitle">Metas para un...</h1>
@@ -496,14 +497,14 @@
 	mapBtnColores['8'] = "btn-genero";
 	mapBtnColores['0'] = "btn-inicio";
 	var mapIcons = new Object();
-	mapIcons['1'] = "images/mex_paz_color.png";
-	mapIcons['2'] = "images/mex_inclu_color.png";
-	mapIcons['3'] = "images/mex_edu_color.png";
-	mapIcons['4'] = "images/mex_pros_color.png";
-	mapIcons['5'] = "images/mex_global_color.png";
-	mapIcons['6'] = "images/democra_color.png";
-	mapIcons['7'] = "images/cerca_moder_color.png";
-	mapIcons['8'] = "images/genero_color.png";
+	mapIcons['1'] = "images/Botones/mex_paz_color.png";
+	mapIcons['2'] = "images/Botones/mex_inclu_color.png";
+	mapIcons['3'] = "images/Botones/mex_edu_color.png";
+	mapIcons['4'] = "images/Botones/mex_pros_color.png";
+	mapIcons['5'] = "images/Botones/mex_global_color.png";
+	mapIcons['6'] = "images/Botones/democra_color.png";
+	mapIcons['7'] = "images/Botones/cerca_moder_color.png";
+	mapIcons['8'] = "images/Botones/genero_color.png";
 	mapIcons['0'] = "btn-inicio";
 	var idProgDeriv = 0;
 	var idMetaNac = -1;
@@ -621,7 +622,7 @@
         if(totalObjetivos < 4){
     		stringDivObj+='<div class="grid">';
     		$.each(mapObjetivos, function(i, v) {
-    			stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
+    			stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/mira_'+(i+1)+'.png" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
 			});
     		stringDivObj+='</div>';
         }else{
@@ -633,9 +634,9 @@
     		$.each(mapObjetivos, function(i, v) {
     			
     			if(cellByRow == i){
-    				stringDivObj+='</div><div class="grid"><figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
+    				stringDivObj+='</div><div class="grid"><figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/mira_'+(i+1)+'.png" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
     			}else{
-    				stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/1.jpg" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
+    				stringDivObj+='<figure class="effect-chico" ide="obj-'+(i+1)+'"><img src="images/mira_'+(i+1)+'.png" /><figcaption><h2><span>'+(i+1)+'</span></h2><p>'+v.DESC_OBJETIVO+'</p></figcaption></figure>';
     			}
 			});
     		stringDivObj+='</div>';
@@ -652,7 +653,7 @@
         	stringDivObj+='<h2 class="title">Este programa también está incluido en las siguientes metas...</h2><ul class = "metas-icons">';
         	for(var i in arrMetasFilt){
 	        	if(arrMetasFilt[i] != idMetaNac && arrMetasFilt[i] != 0){
-	        		stringDivObj+='<li class="" index="'+arrMetasFilt[i]+'"><img src="'+getIcon(arrMetasFilt[i])+'"></li>';
+	        		stringDivObj+='<li class="" index="'+arrMetasFilt[i]+'"><img src="'+getIcon(arrMetasFilt[i])+'" style="max-width: 50px;"></li>';
 	        	}
 	        }
 			stringDivObj+='</ul>';	

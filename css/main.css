@@ -7,7 +7,7 @@
 	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
 		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
 		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
-		url('fonts/soberana/fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
 		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
 	font-weight: bold;
 	font-style: normal;

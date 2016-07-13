@@ -25,14 +25,8 @@
 	font-style: normal;
 }
 
-/*div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}*/
-
 /* Pattern styles */
-.container {
+.container-pnd {
     display: -webkit-flex;
     display: flex;
 }
@@ -519,7 +513,7 @@
         transform: none
     }
 
-   .container {
+   .container-pnd {
       display: inline-block;
     }
 
