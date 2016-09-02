@@ -1,49 +1,61 @@
 @font-face {
 	font-family: 'SoberanaSans_Bold';
-	src: url('fonts/soberana/SoberanaSans-Bold.eot');
-	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'SoberanaSans_Light';
-	src: url('fonts/soberana/SoberanaSans-Light.eot');
-	src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('fonts/awesome/fontawesome-webfont.eot?v=4.6.3');
-  src: url('fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), 
-	  url('fonts/awesome/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), 
-	  url('fonts/awesome/fontawesome-webfont.woff?v=4.6.3') format('woff'), 
-	  url('fonts/awesome/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), 
-	  url('fonts/awesome/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+  src: url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.eot?v=4.6.3');
+  src: url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), 
+	  url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), 
+	  url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.woff?v=4.6.3') format('woff'), 
+	  url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), 
+	  url('/work/models/PTP/programas/pnd/css/fonts/awesome/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
 	font-family: 'DJB_Smarty_Pants';
-	src: url('fonts/smartypants/DJBSmartyPants.eot');
-	src: url('fonts/smartypants/DJBSmartyPants.eot?#iefix') format('embedded-opentype'),
-		url('fonts/smartypants/DJBSmartyPants.woff2') format('woff2'),
-		url('fonts/smartypants/DJBSmartyPants.woff') format('woff'),
-		url('fonts/smartypants/DJBSmartyPants.ttf') format('truetype'),
-		url('fonts/smartypants/DJBSmartyPants.svg#DJBSmartyPants') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/smartypants/DJBSmartyPants.svg#DJBSmartyPants') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+p.scroll-answer-mide{
+	max-height: 120px;
+	overflow-y: auto;
+}
+
+.navbar-fixed-top, 
+.navbar-fixed-bottom,
+.site-footer {
+	z-index: 1;
+	visibility: hidden;
 }
 
 .header-wrap {
@@ -64,7 +76,6 @@
 
 .footer-wrap {
 	color: #fff;
-    position: absolute;
     width: 100%;
     height: 100px;
     margin-bottom:0px;
@@ -112,7 +123,7 @@
     margin: 0 auto;
     width: 0;
     height: 0;
-    border-top: solid 30px #24AF85;
+    border-top: solid 30px transparent;
     border-left: solid 60px transparent;
     border-right: solid 60px transparent;
 }
@@ -201,13 +212,6 @@
 }
 
 /******************************************************/
-.container-obj{ 
-    margin-top: 0px;
-}
-
-.container-ind{ 
-    margin-top: 100px;
-}
 
 h1.title {
 	position:relative;
@@ -261,10 +265,28 @@ h2.title {
    	max-width: 100%;
 }
 
+.content-buttons-home{
+	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: row;
+   	flex-direction: row;
+   	-webkit-align-items: center;
+   	align-items: center;
+   	-webkit-justify-content: center;
+   	justify-content: center;
+   	max-width: 100%;
+}
+
 .container-divs {
 	padding-top: 0px;
   	display: -webkit-flex;
    display: flex;
+   -webkit-flex-direction: row;
+   	flex-direction: row;
+   	-webkit-align-items: center;
+   	align-items: center;
+   	-webkit-justify-content: center;
+   	justify-content: center;
 }
 
 .left-graf {
@@ -290,6 +312,12 @@ h2.title {
 	font-size: 18px;
 }
 
+.left-graf .highcharts-container, 
+.left-graf .highcharts-container svg,
+.left-graf .highcharts-background { 
+	width: 100% !important; 
+}
+
 .right-desc {
   	flex: 1;
   	padding: 1rem;
@@ -301,6 +329,11 @@ h2.title {
 	background: #462B60;
 }
 
+.question-container{
+	margin: 5px 15px;
+	cursor: pointer;
+}
+
 .question{
 	width: 95%;
 }
@@ -308,14 +341,21 @@ h2.title {
 .question h1{
 	text-align: center;
 	font-family: SoberanaSans_Bold;
-	font-size: 64px;
-	margin: 25px 0px 5px 0px;
+	font-size: 34px;
+	margin: 5px 0px 2px 0px;
 }
 
 .question h2{
 	font-family: SoberanaSans_Bold;
 	font-size: 24px;
+	margin: 2px 0px;
+}
+
+.questionc h2{
+	font-family: SoberanaSans_Bold;
+	font-size: 18px;
 	margin: 5px 0px;
+	text-align: center;
 }
 
 .question p{
@@ -330,8 +370,13 @@ h2.title {
   font-family: SoberanaSans_Light;
   font-size: 18px;
   height:150px;
-  width: 90%;
+  max-width: 80%;
   margin: auto;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease,-webkit-transform .5s ease;
 }
 
 .scroll-list ul{
@@ -356,9 +401,13 @@ h2.title {
 	position: static;
 	width: 100%;
 	bottom: 20px;
-	padding: 0;
+	padding: 15px 0;
 	margin: 0;
 	text-align: center;
+}
+
+.bullets:after{
+	background: rgba(255,255,255,0.1);
 }
 
 .bulletTitle span {
@@ -380,7 +429,9 @@ h2.title {
 	height: 60px;
 	background-repeat: no-repeat;
 	background-position: bottom;
-	background-image: url(http://172.22.75.89/work/models/PTP/programas/pnd/images/mira_tiny.png);
+	background-image: url(/work/models/PTP/programas/pnd/images/mira_unselected.png);
+	background-size: 42px 42px;
+    background-repeat: no-repeat;
 	/*background: rgba( 255, 255, 255, 0.5 );
 	box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );*/
 	cursor: pointer;
@@ -393,9 +444,9 @@ h2.title {
 }*/
 
 .bullets li.active {
-	display: none;
-	cursor: default;
-	background: #000;
+	/*display: none;
+	cursor: default;*/
+	background-image: url(/work/models/PTP/programas/pnd/images/mira_selected.png);
 }
 
 @media screen and (max-width: 400px) {
@@ -420,21 +471,15 @@ h2.title {
 .metas-icons li {
 	list-style: none;
 	display: inline-block;
-	width: 40px;
-	height: 20px;
-	padding-right: 20px;
-	padding-left: 20px;
-	margin: 0 3px;
+	margin: 0 2%;
 	width: 50px;
 	height: 50px;
-	background-repeat: no-repeat;
-	background-position: bottom;
 	opacity: 0.5;
-	/*background-image: url(../images/mira_tiny.png);*/
-	/*background: rgba( 255, 255, 255, 0.5 );
-	box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );*/
 	cursor: pointer;
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+
+	-webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
 }
 
 /*.bullets li:hover {
@@ -451,14 +496,80 @@ h2.title {
 }
 
 /********* select **********/
+
+.fa{
+	color: #462B60;
+	margin: auto;
+	cursor: pointer;
+}
+
+.arrows{
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+}
+
+.arrowtotop{
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	max-width: 70px;
+	text-align: center;
+}
+
+.home-top{
+	position: absolute;
+	display: flex;
+	z-index: 5;
+	cursor: pointer;
+	/*right: 15px;*/
+}
+
+.p-home-top{
+	margin-top: 30px;
+}
+
+.fa-arrow-up{
+	float: right;
+	margin-right: 2%;
+}
+
+.fa-arrow-right{
+	float: right;
+	margin-right: 2%;
+}
+
+.fa-arrow-left{
+	margin-left: 2%;
+}
+
+.fa-home{
+	margin: 10px 10px 10px 20px;
+}
+
+.p-arrow-left{
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 2%
+}
+
+.p-arrow-right{
+	float: right;
+	margin-top: 10px;
+	margin-right: 2%;
+}
+
+.p-arrow-up{
+	float: right;
+}
+
 .selectdiv {
-  	width: 90%;
+  	width: 80%;
   	text-align: center;
   	border: 2px solid #462B60;
-  	border-top: 0px;
   	margin: auto;
   	margin-top: 10px;
-
   	padding-top: 15px;
   	padding-bottom: 15px;
 }
@@ -501,6 +612,21 @@ h2.title {
 	transition: all 0.3s;
 }
 
+.question-container:after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    z-index: 10;
+    border-top: solid 30px transparent;
+    border-left: solid 60px transparent;
+    border-right: solid 60px transparent;
+}
+
 /* Pseudo elements for icons */
 .btn:before{
 	font-family: FontAwesome;
@@ -513,6 +639,64 @@ h2.title {
 	position: relative;
 	-webkit-font-smoothing: antialiased;
 }
+
+.urcoordina:before{
+	font-family: FontAwesome;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.div-coordina{
+	display:flex; 
+	flex-direction:row;
+	align-items: center;
+	width:60%; 
+	font-size:0;
+	border-radius: 3px;
+}
+
+.nourcoordina{
+	flex: 1;
+  	padding: 1rem;
+  	text-align: center;
+	width: 30%; 
+	height: 100%; 
+	font-size: 20px
+}
+
+.nourcoordina span{
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.arrow-coordina{
+	flex: 1;
+	position: relative;
+	width: 20%; 
+	text-align: center;
+}
+
+.arrow-coordina img {
+	flex: 1;
+  	padding: 1rem;
+  	text-align: center;
+}
+
+.urcoordina{
+	flex: 1;
+  	padding: 1rem;
+  	text-align: center;
+	width: 60%; 
+	height: 100%;
+	font-size: 20px
+}
+
 
 /****************** iconos *******************/
 
@@ -528,7 +712,29 @@ h2.title {
 	content:"\f021";
 }
 
+.icon-link:before{
+	content:"\f0c1";
+}
+
+.icon-arrow:before{
+	content:"\f061";
+}
+
+.icon-question:before{
+	content:"\f29c";
+}
+
 /*************************************/
+.btn-inicio {
+	border: 3px solid #462B60;
+	color: #462B60;
+	background: #fff;
+}
+
+.btn-inicio:hover {
+	background: #462B60;
+	color: #fff;
+}
 
 .btn-paz {
 	border: 3px solid #24AF85;
@@ -618,6 +824,7 @@ h2.title {
 	color: #fff;
 }
 
+.btn-inicio:before,
 .btn-paz:before,
 .btn-incluyente:before,
 .btn-educacion:before,
@@ -636,6 +843,39 @@ h2.title {
 }
 
 /**************************************/
+
+/* Boton desplegable de años*/
+.dropdown-logros {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-logros {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 80%;
+    overflow: auto;
+    box-shadow: 5px 13px 21px 5px rgba(0,0,0,0.5);
+    z-index: 50;
+    text-align: center;
+
+}
+
+.dropdown-content-logros a {
+    color: #333;
+    padding: 5px 1px;
+    text-decoration: none;
+    display: block;
+}
+
+div.dropdown-content-logros a:hover {
+	background-color: #ddd;
+}
+
+.show-logros {
+	display:block;
+}
 
 /* Button 3a */
 .btn-3a {
@@ -694,6 +934,7 @@ h2.title {
 .btn-3e span{
 	font-family: SoberanaSans_Bold;
 	font-size: 2.0em;
+	text-transform: capitalize;
 }
 
 /************************************************/
@@ -728,14 +969,15 @@ h2.title {
 	.right-desc hr{
 		width: 100%;
 	}
-
-	.selectdiv{
-		width: 95%;
-	}
 }
 
 @media screen and (max-width: 1000px){
 	.content-buttons{
+		-webkit-flex-wrap: wrap;
+   		flex-wrap: wrap;
+	}
+
+	.content-buttons-home{
 		-webkit-flex-wrap: wrap;
    		flex-wrap: wrap;
 	}
@@ -762,6 +1004,10 @@ h2.title {
 @media screen and (max-width: 840px){
 	h1.title{
 		font-size: 30px;
+	}
+
+	h2.title{
+		font-size: 22px;
 	}
 
 	.container-divs{
@@ -796,6 +1042,10 @@ h2.title {
 		font-size: 18px;
 	}
 
+	.questionc h2{
+		font-size: 18px;
+	}
+
 	.question p{
 		font-size: 16px;
 	}
@@ -808,6 +1058,71 @@ h2.title {
 		width: 90%;
 		margin: 7px auto;
 	}
+
+	.dropdown-logros{
+		position: relative;
+		width: 100%;
+		text-align: center;
+	}
+
+	.div-coordina{
+		flex-direction: column;
+		width: 80%;
+	}
+	
+	.urcoordina,
+	.nourcoordina {
+		width: 100%;
+	}
+
+	.arrow-coordina {
+		transform: rotate(90deg);
+	}
+
+	.selectdiv{
+		width: 95%;
+	}
+
+	.arrows{
+		position: relative;
+		padding-top: 15px;
+	}
+
+	.arrowtotop{
+		position: relative;
+		display: inherit;
+		max-width: 100%;
+		margin: auto;
+		padding-top: 25px;
+	}
+
+	.p-arrow-up{
+		max-width: 70px;
+		margin-top: 10px;
+	}
+
+	.fa-arrow-right{
+	margin-right: 20%;
+	}
+
+	.fa-arrow-left{
+		margin-left: 20%;
+	}
+
+	.p-arrow-left{
+		margin-left: 20%
+	}
+
+	.p-arrow-right{
+		margin-right: 20%;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.home-top{
+		position: relative;
+		left: 30%;
+	}
 }
 
 @media screen and (max-width: 421px){
@@ -819,6 +1134,20 @@ h2.title {
 
 @media screen and (max-width: 480px){
 	h1.title{
-		padding-top: 40px;
+		padding-top: 0px;
 		font-size: 30px;
 	}
+
+	h2.title{
+		font-size: 18px;
+	}
+
+	.urcoordina,
+	.nourcoordina {
+		font-size: 16px;
+	}
+
+	.home-top{
+		left: 20%;
+	}
+}

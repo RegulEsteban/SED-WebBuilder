@@ -204,7 +204,7 @@
 		// track the end of the animation for all layers
 		var self = this, layerscomplete = 0;
 		var page = parseInt(currentPage);
-
+		console.log(currentPage);
 		onEndAnimation(this.layers[page], function() {
 			++layerscomplete;
 			if( layerscomplete === self.options.nmbTransitions ) {

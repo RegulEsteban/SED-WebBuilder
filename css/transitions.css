@@ -1,23 +1,23 @@
 @font-face {
 	font-family: 'Soberana_Bold';
-	src: url('fonts/soberana/SoberanaSans-Bold.eot');
-	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'SoberanaSans';
-	src: url('fonts/soberana/SoberanaSans-Light.eot');
-	src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
 	font-weight: 300;
 	font-style: normal;
 }
@@ -138,11 +138,14 @@
 /* Revealers */
 
 .revealer {
-	width: 100vw;
-	height: 100vh;
+	/*width: 100vw;
+	height: 100vh;*/
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 1000;
 	pointer-events: none;
+	text-align: center;
 }
 
 .revealer--cornertopleft,
@@ -180,6 +183,7 @@
 	left: 0;
 	background: #ddd;
 	visibility: hidden;
+	padding: 9%;
 }
 
 /* Revealer effects */

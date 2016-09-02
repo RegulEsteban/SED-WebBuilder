@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-	<meta charset="utf-8">
+	<!--<meta charset="utf-8">-->
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
 	<title>:: Plan Nacional de Desarrollo ::</title>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -89,7 +90,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">México en Paz</span>
+								<span class="caption">M&eacute;xico en Paz</span>
 							</div>
 						</a>
 					
@@ -105,7 +106,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">México Incluyente</span>
+								<span class="caption">M&eacute;xico Incluyente</span>
 							</div>
 						</a>
 						
@@ -121,7 +122,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">México con educación de calidad</span>
+								<span class="caption">M&eacute;xico con educaci&oacute;n de calidad</span>
 							</div>
 						</a>
 						
@@ -137,7 +138,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">México Próspero</span>
+								<span class="caption">M&eacute;xico Pr&oacute;spero</span>
 							</div>
 						</a>
 						
@@ -153,7 +154,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">México con Responsabilidad Global</span>
+								<span class="caption">M&eacute;xico con Responsabilidad Global</span>
 							</div>
 						</a>
 					</article>
@@ -204,7 +205,7 @@
 										</div>
 									</div>
 								</div>
-								<span class="caption">Perspectiva de Género</span>
+								<span class="caption">Perspectiva de G&eacute;nero</span>
 							</div>
 						</a>
 					</article>
@@ -259,9 +260,12 @@
 <script src="js/jquery.csv.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/dataTable-custom.js"></script>
 <script src="js/transitions-indicadores.js" type="text/javascript"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 <script type="text/javascript">
 (function() {
+	$('head').append('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 	var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
 		currentPage = 0,
 		antPage = 0,
@@ -281,14 +285,14 @@
 					'images/Botones/cerca_moder_blan.png', 
 					'images/Botones/genero_blan.png'],
 			bgTitles : ['Plan Nacional de Desarrollo',
-				'México en Paz',
-				'México Incluyente',
-				'México con Educación de Calidad',
-				'México Próspero',
-				'México con Responsabilidad Global',
+				'M&eacute;xico en Paz',
+				'M&eacute;xico Incluyente',
+				'M&eacute;xico con Educaci&oacute;n de Calidad',
+				'M&eacute;xico Pr&oacute;spero',
+				'M&eacute;xico con Responsabilidad Global',
 				'Democratizar la Productividad',
 				'Gobierno Cercano y Moderno',
-				'Perspectiva de Género'],
+				'Perspectiva de G&eacute;nero'],
 			// effect classname
 			effect : 'anim--effect-1',
 			onStart : function(direction) {
@@ -496,6 +500,16 @@
 	mapBtnColores['7'] = "btn-cercano";
 	mapBtnColores['8'] = "btn-genero";
 	mapBtnColores['0'] = "btn-inicio";
+	var mapTitlesColores = new Object();
+	mapTitlesColores['1'] = "t-paz";
+	mapTitlesColores['2'] = "t-incluyente";
+	mapTitlesColores['3'] = "t-educacion";
+	mapTitlesColores['4'] = "t-prospero";
+	mapTitlesColores['5'] = "t-global";
+	mapTitlesColores['6'] = "t-democra";
+	mapTitlesColores['7'] = "t-cercano";
+	mapTitlesColores['8'] = "t-genero";
+	mapTitlesColores['0'] = "t-inicio";
 	var mapIcons = new Object();
 	mapIcons['1'] = "images/Botones/mex_paz_color.png";
 	mapIcons['2'] = "images/Botones/mex_inclu_color.png";
@@ -543,6 +557,7 @@
 		//url : 'files/file.txt',
 		url : 'files/BD_PND.csv',
 		dataType : 'text',
+		contentType: "text/plain; charset=utf-8",
 		async: true,
 		success : function load(d) {
 			data = $.csv.toArrays(d);
@@ -568,25 +583,49 @@
             table_prog.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
         }
-
         idProgDeriv = $(this).attr('ide_prog_deriv');
+        
+        var totalActives = 0;
+        $("div.mix").each(function(index, el) {
+			var ideMetaIcon = el.getAttribute('ideMetaIcon');
+			if(ideMetaIcon != undefined){
+				if($(el).hasClass('item')){
+					totalActives++;
+					idMetaNac = ideMetaIcon;
+				}
+			}
+		});
+        coreProgramas(idProgDeriv, totalActives);
+
+    });
+	
+	function coreProgramas(idProgDeriv, totalActives) {
+        
         var arrMetasFilt = [];
         $.each(mapValues, function(i, v) {
       		if(v.ID_PROGRAMA_DERIVADO === idProgDeriv){
 
-      			arrMetasFilt = String(v.ID_META_NACIONAL).split('#');
-      			var item = arrMetasFilt[Math.floor(Math.random()*arrMetasFilt.length)];
-      			if(item != 0){
-      				reveal('bottom', item, searchAntPage(), v.DESC_ID_PROGRAMA_DERIVADO);
-      			
-      				idMetaNac = item;
-      				$("div.page[ide="+idMetaNac+"]").append("<div class='header-wrap "+getColorsMeta(idMetaNac)+"'><h2>"+v.DESC_ID_PROGRAMA_DERIVADO+"</h2></div>");
-      			}
-      			return;
+      			if(totalActives === 1 && idMetaNac != -1){
+      				arrMetasFilt = String(v.ID_META_NACIONAL).split('#');
+					reveal('bottom', idMetaNac, searchAntPage(), v.DESC_ID_PROGRAMA_DERIVADO);
+
+	      			$("div.page[ide="+idMetaNac+"]").append("<div class='header-wrap "+getColorsMeta(idMetaNac)+"'><h2>"+v.DESC_ID_PROGRAMA_DERIVADO+"</h2></div>");
+				}else{
+					arrMetasFilt = String(v.ID_META_NACIONAL).split('#');
+	      			var item = arrMetasFilt[Math.floor(Math.random()*arrMetasFilt.length)];
+	      			if(item != 0){
+	      				reveal('bottom', item, searchAntPage(), v.DESC_ID_PROGRAMA_DERIVADO);
+	      			
+	      				idMetaNac = item;
+	      				$("div.page[ide="+idMetaNac+"]").append("<div class='header-wrap "+getColorsMeta(idMetaNac)+"'><h2>"+v.DESC_ID_PROGRAMA_DERIVADO+"</h2></div>");
+	      			}
+				}
+
+      			return false;
       		}
 		});
         
-		var stringDivObj = '<div class="container-obj"><h1 class="title">Objetivos</h1><div class="head-button3"><a id="btn-return" class="viewWork2">Regresar a Menú</a></div><div class="content">';
+		var stringDivObj = '<div class="container-obj"><div class="head-button3"><a id="btn-return" class="viewWork2">Regresar a Men&uacute;</a></div><h1 class="title">Objetivos</h1><div class="content">';
 		
 		var mapObjetivos = [];
 		var totalObjetivos = 0;
@@ -605,7 +644,7 @@
 			          		$.each(mapObjetivos, function(i, v) {
 				          		if(v.ID_OBJETIVO === itemMap["ID_OBJETIVO"]){
 				          			exist = true;
-				          			return;
+				          			return false;
 				          		}
 							});
 
@@ -644,16 +683,36 @@
         }
         stringDivObj+="</div>";
 
+        var urlDownPrograma = '';
+	    var urlDownDecreto = '';
 
-        stringDivObj+='<div class="content-buttons"><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Programa</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Decreto</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Logros (LD)</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Datos abiertos</button></div>';
+        for(var row in data) {
+	        if(row > 0){
+	          	if(data[row][getValueColumn("ID_PROGRAMA_DERIVADO")] == idProgDeriv){
+	          		urlDownPrograma = data[row][getValueColumn("URL_DOF_P-PND")];
+	    			urlDownDecreto = data[row][getValueColumn("URL_DOF_DECRETO")];
+	          	}
+	        }
+	    }
 
-        stringDivObj+='<div class="content-buttons"><button class="btn '+getColorsMeta(idMetaNac)+' btn-3e"><span>11</span> Instituciones Participantes</button><button class="btn '+getColorsMeta(idMetaNac)+' btn-1b">Descarga la <span>Guía Rápida</span> del Programa<img src="images/guia_ciu.png"></button></div>';
+        stringDivObj+='<div class="content-buttons">';
+        
+        if(urlDownPrograma != undefined && urlDownPrograma != ''){
+        	stringDivObj+='<a href="'+urlDownPrograma+'" class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Programa</a>';
+        }
+        if(urlDownDecreto != undefined && urlDownDecreto != ''){
+        	stringDivObj+='<a href="'+urlDownDecreto+'" class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3a icon-cloud-download">Decreto</a>';
+        }
+
+        stringDivObj+='<button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Logros (LD)</button><button class="btn '+getBtnColorsMeta(idMetaNac)+' btn-3b icon-cloud-download">Datos abiertos</button></div>';
+
+        stringDivObj+='<div class="content-buttons"><button class="btn '+getColorsMeta(idMetaNac)+' btn-3e"><span>11</span> Instituciones Participantes</button><button class="btn '+getColorsMeta(idMetaNac)+' btn-1b">Descarga la <span>Gu&iacute;a R&aacute;pida</span> del Programa<img src="images/guia_ciu.png"></button></div>';
 
         if(arrMetasFilt.length > 1){
-        	stringDivObj+='<h2 class="title">Este programa también está incluido en las siguientes metas...</h2><ul class = "metas-icons">';
+        	stringDivObj+='<h2 class="title">Este programa tambi&eacute;n est&aacute; incluido en las siguientes metas...</h2><ul class = "metas-icons">';
         	for(var i in arrMetasFilt){
 	        	if(arrMetasFilt[i] != idMetaNac && arrMetasFilt[i] != 0){
-	        		stringDivObj+='<li class="" index="'+arrMetasFilt[i]+'"><img src="'+getIcon(arrMetasFilt[i])+'" style="max-width: 50px;"></li>';
+	        		stringDivObj+='<li class="go-meta" index-meta="'+arrMetasFilt[i]+'"><img src="'+getIcon(arrMetasFilt[i])+'" style="max-width: 50px;"></li>';
 	        	}
 	        }
 			stringDivObj+='</ul>';	
@@ -671,6 +730,8 @@
       		}
 		});
 
+		$('head').append('<style>.hero:after{ border-top: solid 30px transparent; }</style>');
+
 		$("#btn-return").click(function(){
 			reveal('bottom', '0', searchAntPage());
 			$('.footer-wrap').remove();
@@ -684,6 +745,28 @@
 			return false;
 		});
 
+		$("li.go-meta").click(function(){
+			
+			var idMetaNacTMP = $(this).attr('index-meta');
+			if(idMetaNacTMP != undefined && idMetaNacTMP != ''){
+				idMetaNac = idMetaNacTMP;
+
+				$('.footer-wrap').remove();
+				$('.hero').remove();
+				$('.container-obj').remove();
+				$('.header-wrap').remove();
+				$('.kontext').remove();
+		        $('.footer-wrap').remove();
+		        $('.bullets').remove();
+		        $('.final').remove();
+
+				coreProgramas(idProgDeriv, 1);
+			}else{
+				return false;	
+			}
+			
+		});
+
 		$("figure.effect-chico").click(function(e) { 
 	        e.preventDefault(); 
 	        $("#loading").fadeIn(200);
@@ -692,39 +775,66 @@
 	        $('.bullets').remove();
 	        $('.final').remove();
 
+	        $('head').append('<style>.hero:after{ border-top: solid 30px '+$('div.header-wrap').css('backgroundColor')+'; }</style>');
+
 	        var idObjetivo = $(this).attr("ide").replace('obj-','');
 	        var descObj = $(this).find('p').text();
 	        
 	        $("div.page[ide="+idMetaNac+"]").append('<div id="obj-'+idObjetivo+'" class="footer-wrap bg-inicio"><h2><span>Objetivo '+idObjetivo+'</span> '+descObj+'</h2></div>');
 
 	        var stringIndicadores = '<article class="kontext">';
+	        var firstInd = false;
 	        for(var row in data) {
 	          	if(row > 0){
 	          		if(data[row][getValueColumn("ID_PROGRAMA_DERIVADO")] == idProgDeriv &&
 	          			data[row][getValueColumn("ID_OBJETIVO")] == idObjetivo){
 	          			var idIndicador = data[row][getValueColumn("ID_INDICADOR")];
 	          			var descIndicador = data[row][getValueColumn("DESC_INDICADOR")];
-	          			stringIndicadores+=(idIndicador == '1' ? '<section class="layer show">' : '<section class="layer">');
+	          			var fuente = data[row][getValueColumn("FUENTE")];
+	          			var url_fuente = data[row][getValueColumn("URL_FUENTE")];
+	          			var calculoIndicador = data[row][getValueColumn("CALCULO_INDICADOR")];
+	          			var frecuencia = data[row][getValueColumn("FRECUENCIA")];
+	          			var urCoordinadora = data[row][getValueColumn("DESC_UR_COORDINADORA")];
+
+	          			stringIndicadores+=(!firstInd ? '<section class="layer show">' : '<section class="layer">');
 	          			stringIndicadores+='<div class="container-ind"><div class="selectdiv"><h2><span>Indicador '+idIndicador+'</span> '+descIndicador+'</h2></div>';
 
-	          			stringIndicadores+='<section class="container-divs"><div class="left-graf"><div class="fuente"> <h2 class="t-paz">Fuente: <span>Encuesta Nacional de Cultura Política y Prácticas Ciudadanas (ENCUP)</span></h2> <h3 class="t-inicio"><a href="http://www.encup.gob.mx" target="_blank">http://www.encup.gob.mx</a></h3></div></div><div class="right-desc"><div class="question"> <h2 class="t-paz">¿Cómo se mide?</h2> <p>Mide el porcentaje de ciudadanos entrevistados que consideran que en el futuro tendrán más oportunidad</p></div><hr><div class="question"> <h2 class="t-paz">¿Cada cuándo?</h2> <p>Bienal</p></div><hr><div class="question"> <h2 class="t-paz">Unidad para el Desarrollo Político y Fomento Cívico (UDPyFC), Secretaría de Gobernación</h2></div><div class="question"> <h1 class="t-paz">8</h1></div><div class="question"> <h2 class="t-paz">Programas Presupuestarios Vinculados</h2></div><div class="scroll-list bg-paz"> <ul> <li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li></ul></div></div></section>';
+	          			stringIndicadores+='<section class="container-divs"><div class="left-graf"><div id="grafica-container-'+row+'"></div><div class="fuente"><h2 class="'+getColorTitles(idMetaNac)+'">Fuente: <span>'+(fuente == undefined || fuente == '' ? 'Informaci&oacute;n no disponible' : fuente)+'</span></h2> <h3 class="t-inicio">'+(url_fuente == undefined || url_fuente == '' ? '' : '<a href="'+url_fuente+'" target="_blank">Ir a la fuente de la informaci&oacute;n</a>')+'</h3></div></div>';
+
+	          			stringIndicadores+='<div class="right-desc"><div class="question"><h2 class="'+getColorTitles(idMetaNac)+'">&iquest;C&oacute;mo se mide?</h2><p>'+(calculoIndicador == undefined || calculoIndicador == '' ? 'Informaci&oacute;n no disponible' : calculoIndicador)+'</p></div><hr><div class="question"><h2 class="'+getColorTitles(idMetaNac)+'">&iquest;Cada cu&aacute;ndo?</h2><p>'+(frecuencia == undefined || frecuencia == '' ? 'Informaci&oacute;n no disponible' : frecuencia)+'</p></div><hr><div class="question"><h2 class="'+getColorTitles(idMetaNac)+'">'+(urCoordinadora == undefined || urCoordinadora == '' ? 'Informaci&oacute;n no disponible' : urCoordinadora)+'</h2></div><div class="question"> <h1 class="'+getColorTitles(idMetaNac)+'">8</h1></div><div class="question"> <h2 class="'+getColorTitles(idMetaNac)+'">Programas Presupuestarios Vinculados</h2></div><div class="scroll-list '+getColorsMeta(idMetaNac)+'"> <ul> <li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li><li>text</li></ul></div>';
+
+	          			stringIndicadores+='</section>';
 
 						stringIndicadores+='</div></section>';
+						firstInd=true;
 	          		}
 	          	}
 	        }
 	        stringIndicadores+='</article><ul class="bullets"></ul><hr class="final">';
 	        
-	        $("div.page[ide="+idMetaNac+"]").append(stringIndicadores);
+	        $("div.page[ide="+idMetaNac+"]").append(firstInd ? stringIndicadores : '<h1 class="title">Actualmente no existe informaci&oacute;n de los indicadores.</h1><hr class="final">');
 
 	        init_kontext();
+
+	        for(var row in data) {
+	          	if(row > 0){
+	          		if(data[row][getValueColumn("ID_PROGRAMA_DERIVADO")] == idProgDeriv &&
+	          			data[row][getValueColumn("ID_OBJETIVO")] == idObjetivo){
+	          			var valLineaBase = data[row][getValueColumn("VALOR_LINEA_BASE")];
+	          			var anoLineaBase = data[row][getValueColumn("AÑO_LINEA_BASE")];
+
+	          			createGraph('grafica-container-'+row);
+
+	          		}
+	          	}
+	        }
 
 	        goToByScroll('obj-'+idObjetivo); 
 
 	        $("#loading").fadeOut(400);
 	    });
 
-    });
+    };
 
 	function generateTable(data) {
 
@@ -807,6 +917,10 @@
     	return mapIcons[k];
 	}
 
+	function getColorTitles(k) {
+    	return mapTitlesColores[k];
+	}
+
 	function init_kontext(){
 		// Create a new instance of kontext
 		var k = kontext( document.querySelector( '.kontext' ) );
@@ -825,7 +939,7 @@
 			bullet.className = i === 0 ? 'active' : '';
 			bullet.setAttribute( 'index', i );
 			bullet.onclick = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
-			bullet.ontouchstart = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
+			//bullet.ontouchstart = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
 			bulletsContainer.appendChild( bullet );
 		}
 		// Update the bullets when the layer changes
@@ -835,32 +949,86 @@
 				bullets[i].className = i === index ? 'active' : '';
 			}
 		} );
-		document.addEventListener( 'keyup', function( event ) {
-			if( event.keyCode === 37 ) k.prev();
-			if( event.keyCode === 39 ) k.next();
-		}, false );
-		var touchX = 0;
-		var touchConsumed = false;
-		document.addEventListener( 'touchstart', function( event ) {
-			touchConsumed = false;
-			lastX = event.touches[0].clientX;
-		}, false );
-		document.addEventListener( 'touchmove', function( event ) {
-			event.preventDefault();
-			if( !touchConsumed ) {
-				if( event.touches[0].clientX > lastX + 10 ) {
-					k.prev();
-					touchConsumed = true;
-				}
-				else if( event.touches[0].clientX < lastX - 10 ) {
-					k.next();
-					touchConsumed = true;
-				}
-			}
-		}, false );
 	}
 
+	function createGraph(idGraph){
+		$('#'+idGraph).highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            title: {
+                text: 'Temperature',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: 'Rainfall',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} mm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 120,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'Rainfall',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            tooltip: {
+                valueSuffix: ' mm'
+            }
+
+        }, {
+            name: 'Temperature',
+            type: 'spline',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            tooltip: {
+                valueSuffix: '°C'
+            }
+        }]
+    });
+	};
+
 })();
+
 </script>
 </body>
 </html>

@@ -9,6 +9,10 @@ $(document).ready(function () {
 	$navLine= $('#navLine');
 	$siteLoader= $('.siteLoader');
 	$loaderText=$(".loaderText");
+	$navbartop = $('.navbar');
+	$navbarbottom = $('.navbar-fixed-bottom');
+	$footerptp = $('.site-footer');
+	$shareButtons = $('#at4-share');
 
 	var i=1;
 
@@ -24,25 +28,25 @@ $(document).ready(function () {
 	var Model = {isLoaded: false,
 			items: [
 			// project header images
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_mor.png",		//11
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_color.png",		//12
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/democra_blan.png",		//13
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_mor.png",	//14
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_color.png",	//15
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/cerca_moder_blan.png",	//16
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_mor.png",		//17
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_color.png",		//18
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/genero_blan.png",		//19
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png",		//1
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png",		//2
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png",	//3
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png",	//4
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png",		//5
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png",		//6
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png",		//7
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png",	//8
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png",	//9
-			"http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png"	//10
+			"/work/models/PTP/programas/pnd/images/Botones/democra_mor.png",		//11
+			"/work/models/PTP/programas/pnd/images/Botones/democra_color.png",		//12
+			"/work/models/PTP/programas/pnd/images/Botones/democra_blan.png",		//13
+			"/work/models/PTP/programas/pnd/images/Botones/cerca_moder_mor.png",	//14
+			"/work/models/PTP/programas/pnd/images/Botones/cerca_moder_color.png",	//15
+			"/work/models/PTP/programas/pnd/images/Botones/cerca_moder_blan.png",	//16
+			"/work/models/PTP/programas/pnd/images/Botones/genero_mor.png",		//17
+			"/work/models/PTP/programas/pnd/images/Botones/genero_color.png",		//18
+			"/work/models/PTP/programas/pnd/images/Botones/genero_blan.png",		//19
+			"/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png",		//1
+			"/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png",		//2
+			"/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png",	//3
+			"/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png",	//4
+			"/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png",		//5
+			"/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png",		//6
+			"/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png",		//7
+			"/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png",	//8
+			"/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png",	//9
+			"/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png"	//10
 
 			]};
 
@@ -95,7 +99,7 @@ $(document).ready(function () {
 			
 			// add all the project header images first
 			if(i<numberOfImagesPerProject.length) {
-
+				$navbartop.css('position', 'relative');
 				$mainContainer.css("visibility","hidden"); 
 				
 			} else {
@@ -122,11 +126,11 @@ $(document).ready(function () {
 	CreateElement();
 
 	var companyName = [
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México en Paz</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Incluyente</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con educación de calidad</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México Próspero</span></div></a>"+
-	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='http://172.22.75.89/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>México con Responsabilidad Global</span></div></a>"
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='/work/models/PTP/programas/pnd/images/Botones/mex_paz_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='/work/models/PTP/programas/pnd/images/Botones/mex_paz_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>M&eacute;xico en Paz</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='/work/models/PTP/programas/pnd/images/Botones/mex_inclu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='/work/models/PTP/programas/pnd/images/Botones/mex_inclu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>M&eacute;xico Incluyente</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='/work/models/PTP/programas/pnd/images/Botones/mex_edu_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='/work/models/PTP/programas/pnd/images/Botones/mex_edu_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>M&eacute;xico con educaci&oacute;n de calidad</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='/work/models/PTP/programas/pnd/images/Botones/mex_pros_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='/work/models/PTP/programas/pnd/images/Botones/mex_pros_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>M&eacute;xico Pr&oacute;spero</span></div></a>"+
+	"<a href='#'><div class='mix user-interface interactive item'><div class='workSquare'><div class='workContent'><div class='workTable'><div class='workCell'><img src='/work/models/PTP/programas/pnd/images/Botones/mex_global_blan.png' class='secondInnerIcon socarp-second-innner'/><img src='/work/models/PTP/programas/pnd/images/Botones/mex_global_color.png' class='innerIcons socarp-inner'></div></div></div></div><span class='caption'>M&eacute;xico con Responsabilidad Global</span></div></a>"
 	]
 	var companyBuildUp="";
 	var showLetter="";
@@ -135,7 +139,6 @@ $(document).ready(function () {
 		$loaderText.html(companyName[0]);
 		if (!Model.isLoaded) {
 			
-			console.log("loaded");
 			for (var i = 0; i < (totalImages+1); i++) {
 				
 				(function(p) {
@@ -151,7 +154,7 @@ $(document).ready(function () {
 							
 							setTimeout(delayCollapseLoader, 400);
 						}
-					}, 150 * p);
+					}, 200 * p);
 				})(i);
 			}
 			Model.isLoaded = true;
@@ -163,7 +166,12 @@ $(document).ready(function () {
 	function delayCollapseLoader(){
 		$mainContainer.css("visibility","visible");
 		$siteLoader.addClass("animateOff");
-		$siteLoader.fadeOut( "slow", function() {});
+		//$siteLoader.css({"transform": "translate3d(200%, 0px, 0px)"});
+		$siteLoader.fadeOut(400, function() {});
+		$navbarbottom.css('visibility', 'visible');
+		$navbartop.css('visibility', 'visible');
+		$footerptp.css('visibility', 'visible');
+		$shareButtons.remove();
 
 		//addAudio();
 		animateAboutTextIn();
@@ -171,3 +179,6 @@ $(document).ready(function () {
 	}
 		
 });
+
+//at-share-open-control at-share-open-control-left ats-transparent addthis-animated slideOutLeft at4-hide
+//at-share-open-control at-share-open-control-left ats-transparent addthis-animated slideInLeft at4-show

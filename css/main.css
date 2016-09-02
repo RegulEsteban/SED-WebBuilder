@@ -3,24 +3,24 @@
 
 @font-face {
 	font-family: 'Soberana_Bold';
-	src: url('fonts/soberana/SoberanaSans-Bold.eot');
-	src: url('fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Bold.svg#SoberanaSans-Bold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'SoberanaSans-Light';
-	src: url('fonts/soberana/SoberanaSans-Light.eot');
-	src: url('fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
-		url('fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
-		url('fonts/soberana/SoberanaSans-Light.woff') format('woff'),
-		url('fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
-		url('fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot');
+	src: url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff2') format('woff2'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.woff') format('woff'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.ttf') format('truetype'),
+		url('/work/models/PTP/programas/pnd/css/fonts/soberana/SoberanaSans-Light.svg#SoberanaSans-Light') format('svg');
 	font-weight: 300;
 	font-style: normal;
 }
@@ -28,29 +28,21 @@
 .siteLoader,
 .head-button,
 .head-button2,
-.head-button3,
 .objective3,
 .objective2,
 #mainContainer,
 .left-half,
 .right-half,
 .item,
-.workSquare,
-.workContent,
-.workTable,
-.workCell,
 .pages,
 .page,
 .hero,
 .footer-wrap,
-.container-obj,
 .selectdiv,
 .left-graf,
 .right-desc,
 .fuente,
 .question,
-.revealer,
-.revealer__layer,
 .quote,
 #loading,
 .scroll-list {
@@ -60,6 +52,21 @@
 }
 
 /*////////////////*/
+
+.scrollToObj {
+  bottom: 5px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  padding: .25em .5em;
+  position: relative;
+  left: 47%;
+  width: 5%;
+  height: 5%;
+}
+
+/*////////////////*/
+
 .title-modal-popup-indicadores{
 	color: white;
 }
@@ -181,6 +188,7 @@ h1.projectTitle {
     text-align: center;
     left: -5%;
     position: float;
+    margin: 0;
     padding-top: 30px;
 }
 
@@ -191,6 +199,7 @@ h1.projectTitleInverse {
     text-align:center;
     left: -5%;
     position: float;
+    margin: 0;
 }
 
 .siteLoader {
@@ -231,13 +240,11 @@ h1.projectTitleInverse {
     margin: auto;
     width: 100%;
     left: 0;
-    top: 40px;
 }
 
 .objective3{
 	height: 280px;
-    margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     min-width: 250px;
     width: 100%;
 	background: #E8DBED;
@@ -253,7 +260,7 @@ h1.projectTitleInverse {
 	font-family:SoberanaSans-Light;
 	font-size: 20px;
 	color:#FFF;
-	margin:auto;
+	margin: auto 10%;
 }
 
 .animateOff {
@@ -263,13 +270,8 @@ h1.projectTitleInverse {
 	transform: translate3d(100%, 0, 0);
 }
 
-
-
 .projectAbout {
-	display: block;
-    margin-left: 20px;
     max-width: 100%;
-    position: relative !important;
     text-align: center;
 	font-size: 45px;
 	margin-top: 10px;
@@ -321,7 +323,7 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 	-webkit-overflow-scrolling: touch;
-		
+	text-align: initial;
 }
 
 html {
@@ -458,11 +460,21 @@ a {
 	    left: 0%;
 	}
 
+	.scrollToObj{
+		left: 46%;
+	}
+
 }
 
 @media all and (max-width: 620px) {
 	.objective2{
 		height: 230px;
+	}
+
+	.scrollToObj{
+		left: 44%;
+		width: 35px;
+		height: 35px;
 	}
 }
 
@@ -475,11 +487,19 @@ a {
 	h1.projectTitleInverse {
 	    left: 0%;
 	}
+
+	.scrollToObj{
+		left: 43%;
+	}
 }
 
 @media all and (max-width: 337px) {
 	.objective2{
 		height: 250px;
+	}
+
+	.scrollToObj{
+		left: 42%;
 	}
 }
 
@@ -508,4 +528,10 @@ a {
         width: 19%;
         margin: 9% 1px 5% 1px;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    .head-button3{
+    	position: relative;
+    }    
 }
